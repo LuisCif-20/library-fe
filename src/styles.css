@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "tailwindcss-animated";
+
+@theme {
+  --font-display: "Montserrat";
+  --color-rb: #191C2C;
+  --color-pb: #00053C;
+  --color-yb: #424A69;
+}
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
