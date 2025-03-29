@@ -1,0 +1,5 @@
+<div class="tooltip" [ngClass]="positionClass()" [attr.data-tip]="theme().label">
+  <button class="btn btn-circle bg-transparent border-none shadow-none" hoverStyle (click)="onToggleTheme()">
+    <span class="text-white">{{ theme().icon }}</span>
+  </button>
+</div>
