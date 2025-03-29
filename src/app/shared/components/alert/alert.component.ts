@@ -2,7 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 import { AlertService } from '../../services/alert.service';
-import { ALERT_VARIANTS } from '../../interfaces/alert.types';
+import { ALERT_VARIANTS } from '../../interfaces/alert.interface';
 
 @Component({
   selector: 'app-alert',
