@@ -3,7 +3,7 @@ import { Component, input, output } from '@angular/core';
 import { HoverStyleDirective } from 'src/app/shared/directives/hover-style.directive';
 
 @Component({
-  selector: 'app-form-step-navigation',
+  selector: 'form-step-navigation',
   imports: [
     HoverStyleDirective
   ],

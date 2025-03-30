@@ -1,0 +1,21 @@
+<div class="flex flex-col">
+  <span class="text-3xl font-bold block text-center my-3">Registrate</span>
+  <register-steps class="mb-4" [step]="step()" [personalForm]="personalForm" [academicForm]="academicForm"
+    [accountForm]="accountForm"
+  />
+  <personal-form [ngClass]="{ 'hidden' : step() !== 1 }" [form]="personalForm">
+    <form-step-navigation buttons class="col-span-2 flex justify-center items-end" style="height: 73px;"
+      [isFirstStep]="true" (next)="increment(personalForm)"
+    />
+  </personal-form>
+  <academic-form [ngClass]="{ 'hidden' : step() !== 2 }" [form]="academicForm" [degrees]="options()" >
+    <form-step-navigation buttons class="flex justify-center items-end mt-7"
+      (prev)="decrement()" (next)="increment(academicForm)"
+    />
+  </academic-form>
+  <account-form [ngClass]="{ 'hidden' : step() !== 3 }" [form]="accountForm">
+    <form-step-navigation buttons class="col-span-2 flex justify-center items-end" style="height: 73px;"
+      [isLastStep]="true" (prev)="decrement()" (next)="onRegister()"
+    />
+  </account-form>
+</div>
