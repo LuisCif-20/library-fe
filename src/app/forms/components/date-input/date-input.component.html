@@ -1,0 +1,16 @@
+<fieldset class="fieldset">
+  <legend class="fieldset-legend">{{ legend() }}</legend>
+  <input type="text" class="input" readonly [value]="value()"
+    placeholder="yyyy-mm-dd" (click)="openCalendar()" (blur)="onTouched()"
+  />
+  <div popover #calendarPopover class="bg-base-200 rounded-box shadow-lg center-popover">
+    <calendar-date class="cally" (change)="onDateChange($event)">
+      <span class="material-icons" slot="previous">arrow_left</span>
+      <span class="material-icons" slot="next">arrow_right</span>
+      <calendar-month />
+    </calendar-date>
+  </div>
+  @if (label()) {
+  <p class="fieldset-label text-error text-[8px] hidden">{{ label() }}</p>
+  }
+</fieldset>

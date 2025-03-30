@@ -1,0 +1,12 @@
+<fieldset class="fieldset">
+  <legend class="fieldset-legend">{{ legend() }}</legend>
+  <select class="select" (change)="onSelectChange($event)">
+    <option value="" disabled selected>{{ placeholder() }}</option>
+    @for (option of options(); track $index) {
+      <option [value]="option.value">{{ option.label }}</option>
+    }
+  </select>
+  @if (label()) {
+    <p class="fieldset-label text-error text-[8px] hidden">{{ label() }}</p>
+  }
+</fieldset>
