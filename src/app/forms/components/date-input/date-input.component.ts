@@ -1,72 +1,52 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, forwardRef, input, signal, viewChild } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NgClass } from '@angular/common';
+import { Component, computed, CUSTOM_ELEMENTS_SCHEMA, ElementRef, input, viewChild } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import "cally";
 
+import { dateToString } from 'src/app/shared/utilities/dates';
+
 @Component({
   selector: 'date-input',
-  imports: [],
+  imports: [
+    NgClass,
+    ReactiveFormsModule
+  ],
   templateUrl: './date-input.component.html',
   styleUrl: './date-input.component.css',
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DateInputComponent),
-      multi: true
-    }
-  ]
 })
-export class DateInputComponent implements ControlValueAccessor {
+export class DateInputComponent {
 
+  public control = input.required<FormControl<string>>();
   public legend = input.required<string>();
-  public label = input<string>();
+  public label = input<string>('');
+  public maxDate = input<Date>(new Date());
 
-  public calendarPopover = viewChild.required<ElementRef<HTMLDivElement>>('calendarPopover');
+  public calendarPopover = viewChild.required<ElementRef<HTMLDivElement>>('calendarPopover')
 
-  public value = signal<string>('');
-  public disabled = signal<boolean>(false);
 
-  constructor() { }
-
-  public onChange = (value: string) => {};
-
-  public onTouched = () => {};
+  public max = computed(() => dateToString(this.maxDate()));
 
   public openCalendar(): void {
-    if (this.calendarPopover()) {
+    if (this.calendarPopover) {
       this.calendarPopover().nativeElement.showPopover();
-      this.onTouched()
     }
   }
 
   public onDateChange(event: Event) {
     const date = event.target as HTMLInputElement;
     if (!date) return;
-    this.value.set(date.value);
-    this.onChange(date.value);
-    this.onTouched();
-    if (this.calendarPopover()) {
+    this.control().setValue(date.value);
+    if (this.calendarPopover) {
       this.calendarPopover().nativeElement.hidePopover();
     }
   }
 
-  writeValue(value: string): void {
-    this.value.set(value);
-  }
-
-  registerOnChange(fn: (value: string) => void): void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: () => void): void {
-    this.onTouched = fn;
-  }
-
-  setDisabledState(isDisabled: boolean): void {
-    this.disabled.set(isDisabled);
+  get isInvalid(): boolean {
+    return this.control().invalid && (this.control().touched || this.control().dirty);
   }
 
 }
