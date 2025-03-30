@@ -1,0 +1,16 @@
+@if (!isFormNull()) {
+  <div class="grid grid-cols-2 gap-x-2">
+    <text-input [control]="form()!.controls.name" legend="Nombre"
+      placeholder="Nick" label="El campo es obligatorio"
+    />
+    <date-input [control]="form()!.controls.birthDate" legend="Nacimiento"
+      label="Elige una fecha valida."
+    />
+  </div>
+  <div class="grid grid-cols-5 gap-x-2">
+    <text-input [control]="form()!.controls.cui" class="col-span-3" legend="CUI"
+      placeholder="XXXX XXXXX XXXX" label="El campo es obligatorio y debe ser de 13 digitos" mask="0000 00000 0000"
+    />
+    <ng-content select="[buttons]" />
+  </div>
+}
