@@ -1,0 +1,15 @@
+<div class="background flex justify-center items-center min-h-screen p-[35px]">
+  <div class="w-75 md:w-175 h-115 grid grid-cols-1 md:grid-cols-2 gap-0">
+    <div class="rounded-l-2xl hidden md:block bg-cover bg-center bg-no-repeat"
+      style="background-image: url(https://prensacomunitaria.org/wp-content/uploads/2022/05/CUNOC.jpg);">
+    </div>
+    <div class="bg-base-100 rounded-2xl md:rounded-r-2xl md:rounded-l-none p-8 md:p-10">
+      <div class="h-full flex flex-col justify-between">
+        <router-outlet />
+        <auth-page-toogle class="mt-auto text-center" />
+      </div>
+    </div>
+  </div>
+</div>
+<home-button class="fixed top-[35px] left-[35px] z-5" />
+<theme-switcher class="fixed top-[35px] right-[35px] z-5" />

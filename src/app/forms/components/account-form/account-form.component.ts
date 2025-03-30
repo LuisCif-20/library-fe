@@ -5,7 +5,7 @@ import { AccountForm } from '../../interfaces/form.interface';
 import { TextInputComponent } from '../text-input/text-input.component';
 
 @Component({
-  selector: 'app-account-form',
+  selector: 'account-form',
   imports: [
     TextInputComponent
   ],

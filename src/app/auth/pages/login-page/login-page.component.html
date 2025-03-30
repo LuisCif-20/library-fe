@@ -1,0 +1,18 @@
+<div class="flex flex-col">
+  <span class="text-3xl font-bold text-center my-3">Inicia Sesión</span>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <text-input [control]="loginForm.controls.email" type="text" legend="Email"
+      placeholder="nick@example.com" label="El email es obligatorio."
+    />
+    <text-input [control]="loginForm.controls.password" type="password" legend="Contraseña"
+      placeholder="••••••••" label="La contraseña es obligatoria."
+    />
+    <button class="btn bg-yb my-3 text-white w-full rounded-full hover:bg-yb/85" type="submit">
+      Ingresar
+    </button>
+  </form>
+  <span class="text-xs block text-center">
+    <a class="link" routerLink="/auth/reset-password">¿Olvidaste tu contraseña?</a>
+  </span>
+</div>
+

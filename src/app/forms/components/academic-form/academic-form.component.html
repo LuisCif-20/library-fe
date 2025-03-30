@@ -3,7 +3,7 @@
     <text-input [control]="form()!.controls.carnet" type="text" legend="Carné" placeholder="XXXXXXXXX"
       label="El campo es obligatorio." mask="000000000" />
     <select-input [control]="form()!.controls.degreeId" legend="Carrera"
-      [options]="[{ label: 'Ejemplo', value: 'ABC' }]" />
+      [options]="degrees()" />
   </div>
   <ng-content select="[buttons]" />
 }
