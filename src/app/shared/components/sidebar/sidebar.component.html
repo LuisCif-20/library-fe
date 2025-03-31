@@ -1,0 +1,9 @@
+<aside class="fixed top-0 left-0 h-full w-75 transform transition-transform md:translate-x-0"
+  [class.-translate-x-full]="!isOpen()" [class.shadow-xl]="isOpen()"
+>
+  <div class="h-full w-full bg-rb text-white flex flex-col p-3">
+    <theme-switcher class="ml-auto hidden md:block" tooltipPosition="left"/>
+    <img height="175" width="175" class="mx-auto my-3 hidden md:block" [src]="logo()" alt="Logo">
+    <ng-content select="[menu]"></ng-content>
+  </div>
+</aside>

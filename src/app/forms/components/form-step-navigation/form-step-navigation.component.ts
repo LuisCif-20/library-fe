@@ -14,6 +14,7 @@ export class FormStepNavigationComponent {
 
   public isFirstStep = input<boolean>(false);
   public isLastStep = input<boolean>(false);
+  public isLoading = input<boolean>(false);
   public next = output<void>();
   public prev = output<void>();
 

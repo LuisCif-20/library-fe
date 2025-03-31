@@ -1,0 +1,16 @@
+<ul class="flex flex-col w-full h-full md:pt-5">
+  @for (sidebarOption of sidebarOptions(); track $index) {
+    <li class="hover:hover:bg-yb/25 rounded text-md font-bold text-white">
+      <a class="h-[40px] pl-3 flex items-center" hoverStyle (click)="redirectTo(sidebarOption.route)">
+        <span class="mr-5">{{ sidebarOption.icon }}</span>
+        {{ sidebarOption.label }}
+      </a>
+    </li>
+  }
+  <li class="mt-auto hover:hover:bg-yb/25 rounded text-md font-bold text-white">
+    <a class="h-[40px] pl-3 flex items-center" (click)="handleAuth()">
+      <span class="material-icons mr-5">{{ user() ? 'logout' : 'login' }}</span>
+      {{ user() ? 'Cerrar Sesión' : 'Iniciar Sesión' }}
+    </a>
+  </li>
+</ul>

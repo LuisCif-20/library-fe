@@ -6,7 +6,9 @@
   </div>
 }
 <div class="tooltip tooltip-bottom mx-1" [attr.data-tip]="isLastStep() ? 'Enviar' : 'Siguiente'">
-  <button type="button" class="btn btn-accent btn-circle text-white" hoverStyle (click)="next.emit()">
+  <button type="button" class="btn btn-accent btn-circle text-white"
+    hoverStyle (click)="next.emit()" [disabled]="isLoading()"
+  >
     <span>{{ isLastStep() ? 'check_circle' : 'arrow_circle_right' }}</span>
   </button>
 </div>

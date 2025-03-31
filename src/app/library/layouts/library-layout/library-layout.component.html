@@ -1,0 +1,13 @@
+<div class="flex flex-col h-screen">
+  <div class="relative z-5">
+  <app-navbar class="md:hidden" (openSidebar)="isOpen.set(true)" />
+  @if (isOpen()) {
+    <div (click)="isOpen.set(false)" class="fixed inset-0 bg-black opacity-50 md:hidden"></div>
+  }
+  <app-sidebar [isOpen]="isOpen()">
+    <sidebar-options menu class="h-full w-full" (closeSidebar)="isOpen.set(false)" />
+  </app-sidebar>
+</div>
+<div class="flex-1 md:ml-75 overflow-y-auto">
+  <router-outlet />
+</div>

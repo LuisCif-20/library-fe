@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
@@ -23,6 +23,8 @@ export default class LoginPageComponent {
   private authStore = inject(AuthStore);
   private alertService = inject(AlertService);
 
+  public isLoading = signal<boolean>(false);
+
   public loginForm = this.formBuilder.group({
     email: this.formBuilder.control('', [Validators.required]),
     password: this.formBuilder.control('', [Validators.required])
@@ -36,6 +38,7 @@ export default class LoginPageComponent {
       this.alertService.showAlert('Formulario invalido, porfavor llenalo correctamente.', 'error');
       return;
     }
+    this.isLoading.set(true);
     this.authStore.login(this.loginForm.getRawValue()).subscribe({
       next: () => {
         this.alertService.showAlert('Bienvenido!!!', 'success');
@@ -43,6 +46,7 @@ export default class LoginPageComponent {
       },
       error: () => this.alertService.showAlert('Credenciales Incorrectas.', 'error')
     });
+    this.isLoading.set(false);
   }
 
 }
