@@ -3,7 +3,7 @@ import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterLink } from '@angular/router';
 
 import { AlertService } from 'src/app/shared/services/alert.service';
-import { AuthStore } from '../../store/auth.store';
+import { AuthStore } from '../../stores/auth.store';
 import { TextInputComponent } from 'src/app/forms/components/text-input/text-input.component';
 
 @Component({

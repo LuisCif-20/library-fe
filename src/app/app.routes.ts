@@ -8,13 +8,17 @@ export const routes: Routes = [
     loadChildren: () => import('./auth/auth.routes')
   },
   {
+    path: 'library',
+    loadChildren: () => import('./library/library.routes')
+  },
+  {
     path: '404',
-    loadChildren: () => import('./shared/pages/error404-page/error404-page.component')
+    loadComponent: () => import('./shared/pages/error404-page/error404-page.component')
   },
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: () => import('./library/library.routes')
+    redirectTo: 'library'
   },
   {
     path: '**',

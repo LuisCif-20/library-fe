@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import Error404PageComponent from './error404-page.component';
+import BookByIdPageComponent from './book-by-id-page.component';
 
-describe('Error404PageComponent', () => {
-  let component: Error404PageComponent;
-  let fixture: ComponentFixture<Error404PageComponent>;
+describe('BookByIdPageComponent', () => {
+  let component: BookByIdPageComponent;
+  let fixture: ComponentFixture<BookByIdPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Error404PageComponent]
+      imports: [BookByIdPageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Error404PageComponent);
+    fixture = TestBed.createComponent(BookByIdPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

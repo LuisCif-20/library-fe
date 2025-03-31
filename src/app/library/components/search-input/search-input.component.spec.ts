@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import Error404PageComponent from './error404-page.component';
+import { SearchInputComponent } from './search-input.component';
 
-describe('Error404PageComponent', () => {
-  let component: Error404PageComponent;
-  let fixture: ComponentFixture<Error404PageComponent>;
+describe('SearchInputComponent', () => {
+  let component: SearchInputComponent;
+  let fixture: ComponentFixture<SearchInputComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Error404PageComponent]
+      imports: [SearchInputComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Error404PageComponent);
+    fixture = TestBed.createComponent(SearchInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

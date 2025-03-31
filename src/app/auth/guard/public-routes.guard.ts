@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanMatchFn, Router } from '@angular/router';
 
-import { AuthStore } from '../store/auth.store';
+import { AuthStore } from '../stores/auth.store';
 import { AuthStatus } from '../interfaces/auth.store.interface';
 
 export const publicRoutesGuard: CanMatchFn = (route, segments) => {
