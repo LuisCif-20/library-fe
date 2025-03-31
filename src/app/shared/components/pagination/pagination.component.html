@@ -1,0 +1,9 @@
+<div class="join">
+  <button class="join-item btn" (click)="previous.emit()" [disabled]="!hasPrevious()">
+    <span class="material-icons">keyboard_double_arrow_left</span>
+  </button>
+  <button class="join-item btn">{{ page() + 1 }}</button>
+  <button class="join-item btn" (click)="next.emit()" [disabled]="!hasNext()">
+    <span class="material-icons">keyboard_double_arrow_right</span>
+  </button>
+</div>

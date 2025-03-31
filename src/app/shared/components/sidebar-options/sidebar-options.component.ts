@@ -1,6 +1,6 @@
 import { Component, computed, inject, output } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthStore } from 'src/app/auth/store/auth.store';
+import { AuthStore } from 'src/app/auth/stores/auth.store';
 import { AlertService } from '../../services/alert.service';
 import { librarianSidebarOptions, sharedSidebarOptions, studentSidebarOptions } from '../../static/sidebar-options.static';
 import { HoverStyleDirective } from '../../directives/hover-style.directive';
