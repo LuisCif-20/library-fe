@@ -21,6 +21,11 @@ export class AuthService {
     return this.httpClient.post<AuthResponse>(url, body);
   }
 
+  public logout(): Observable<void> {
+    const url = `${this.AUTH_URL}/logout`;
+    return this.httpClient.post<void>(url, null);
+  }
+
   public register(body: Register): Observable<boolean> {
     const url = `${this.AUTH_URL}/register`;
     return this.httpClient.post<void>(url, body).pipe(

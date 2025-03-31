@@ -14,7 +14,7 @@ import { emailPattern, namePattern, passwordPattern } from 'src/app/forms/valida
 import { isFieldOneEqualsFieldTwo } from 'src/app/forms/validators/custom-validators';
 import { AlertService } from 'src/app/shared/services/alert.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Degree } from 'src/app/shared/interfaces/degree.interface';
 import { DegreeResponse } from '../../../shared/interfaces/degree.interface';
 import { SelectOption } from 'src/app/forms/interfaces/select-input.interface';
@@ -34,6 +34,7 @@ import { SelectOption } from 'src/app/forms/interfaces/select-input.interface';
 })
 export default class RegisterPageComponent implements OnInit {
 
+  private router = inject(Router);
   private authService = inject(AuthService);
   private alertService = inject(AlertService);
   private formBuilder = inject(NonNullableFormBuilder);
@@ -41,6 +42,8 @@ export default class RegisterPageComponent implements OnInit {
 
   private _step = signal<number>(1);
   private degrees = signal<Degree[]>([]);
+
+  public isLoading = signal<boolean>(false);
 
   public step = computed(() => this._step());
   public options = computed(() => {
@@ -97,6 +100,7 @@ export default class RegisterPageComponent implements OnInit {
       this.alertService.showAlert('Formulario invalido, porfavor llenalo correctamente.', 'error');
       return;
     }
+    this.isLoading.set(true);
     const personalData = this.personalForm.getRawValue();
     const academicData = this.academicForm.getRawValue();
     const { confirmPassword, ...accountData } = this.accountForm!.getRawValue();
@@ -105,9 +109,13 @@ export default class RegisterPageComponent implements OnInit {
       student: { ...academicData }
     };
     this.authService.register(body).subscribe({
-      next: () => this.alertService.showAlert('Solicitud enviada.', 'success'),
+      next: () => {
+        this.alertService.showAlert('Solicitud enviada.', 'success');
+        this.router.navigateByUrl('/auth');
+      },
       error: () => this.alertService.showAlert('Datos duplicados o incorrectos', 'error')
     });
+    this.isLoading.set(false);
   }
 
 }

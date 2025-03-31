@@ -1,0 +1,12 @@
+<div class="navbar bg-rb h-[75px]">
+  <div class="flex-none">
+    <button toggle class="btn btn-circle bg-transparent shadow-none border-none text-white" (click)="openSidebar.emit()">
+      <span class="material-icons">menu</span>
+    </button>
+  </div>
+  <img height="50" width="50" class="ml-3 mr-5" [src]="logo()" [alt]="name()">
+  <div class="flex-1 text-white">
+    <span class="font-bold">{{ name() }}</span>
+  </div>
+  <theme-switcher class="flex-none" tooltipPosition="left" />
+</div>

@@ -5,9 +5,10 @@ import { mapResponse, tapResponse } from "@ngrx/operators";
 
 import { AuthService } from "../services/auth.service";
 import { AuthState, AuthStatus } from "../interfaces/auth.store.interface";
-import { catchError, Observable, of, switchMap } from "rxjs";
+import { catchError, Observable, of, switchMap, throwError } from "rxjs";
 import { AuthResponse, Login } from "../interfaces/auth.interface";
 import { UserService } from "../services/user.service";
+import { HttpErrorResponse } from "@angular/common/http";
 
 const initialState: AuthState = {
   user: null,
@@ -47,6 +48,14 @@ export const AuthStore = signalStore(
     },
     login(body: Login): Observable<boolean> {
       return this.processAuthReq(authService.login(body));
+    },
+    logout(): Observable<void> {
+      return authService.logout().pipe(
+        tapResponse({
+          next: () => patchState(store, { user: null, accessToken: null, authStatus: AuthStatus.NOT_AUTHENTICATED }),
+          error: (error: HttpErrorResponse) => throwError(() => error)
+        })
+      );
     },
     checkAuth(): Observable<boolean> {
       return this.processAuthReq(authService.refreshToken());
