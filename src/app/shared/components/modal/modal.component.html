@@ -1,0 +1,17 @@
+<div class="fixed inset-0 bg-black/50 z-10 overflow-y-auto" (click)="closeModal.emit()">
+  <div class="min-h-screen flex items-center justify-center p-[35px]">
+    <div class="relative bg-base-200 p-5 rounded-lg shadow-lg md:ml-75" (click)="$event.stopPropagation()"
+      [ngClass]="{
+        'w-75 md:w-150': fullWidth(),
+        'max-w-75 md:max-w-150': !fullWidth(),
+        'h-135': fullHeight(),
+        'max-h-135': !fullHeight()
+      }"
+    >
+      <ng-content select="[body]"></ng-content>
+      <button class="absolute top-1 right-1 btn btn-circle btn-ghost scale-75" (click)="closeModal.emit()">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+  </div>
+</div>

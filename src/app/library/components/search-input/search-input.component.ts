@@ -1,7 +1,8 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { debounceTime, Subscription } from 'rxjs';
+import { debounceTime, pipe, Subscription, switchMap } from 'rxjs';
 import { BooksStore } from '../../stores/books.store';
+import { rxMethod } from '@ngrx/signals/rxjs-interop';
 
 @Component({
   selector: 'search-input',
@@ -17,7 +18,9 @@ export class SearchInputComponent implements OnInit, OnDestroy {
   private readonly booksStore = inject(BooksStore);
 
   private subs?: Subscription;
-  private getBooks = this.booksStore.getBooks();
+  private getBooks = rxMethod<void>(pipe(
+    switchMap(() => this.booksStore.getBooks())
+  ));
 
   public searchControl = this.formBuilder.control('');
 
@@ -28,6 +31,7 @@ export class SearchInputComponent implements OnInit, OnDestroy {
       debounceTime(500)
     ).subscribe({
       next: (value) => {
+        this.booksStore.patchInitialState();
         this.booksStore.patchQ(value);
         this.getBooks();
       }

@@ -12,9 +12,11 @@ export interface Filters {
   publicationEndDate?:    string;
   authorIds?:             string[];
   publisherIds?:          string[];
-  page?:                  number;
-  size?:                  number;
+  page:                   number;
+  size:                   number;
 }
+
+export interface SomeFilters extends Omit<Filters, "page" | "size" | "q"> { }
 
 
 export interface BooksState {

@@ -23,12 +23,10 @@ export class DateInputComponent {
   public control = input.required<FormControl<string>>();
   public legend = input.required<string>();
   public label = input<string>('');
-  public maxDate = input<Date>(new Date());
+  public max = input<string>('');
+  public min = input<string>('');
 
   public calendarPopover = viewChild.required<ElementRef<HTMLDivElement>>('calendarPopover')
-
-
-  public max = computed(() => dateToString(this.maxDate()));
 
   public openCalendar(): void {
     if (this.calendarPopover) {
