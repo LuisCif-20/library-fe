@@ -8,6 +8,7 @@ import { SearchInputComponent } from '../../components/search-input/search-input
 import { PaginationComponent } from 'src/app/shared/components/pagination/pagination.component';
 import { ItemsPerPageComponent } from 'src/app/shared/components/items-per-page/items-per-page.component';
 import { BookFiltersModalComponent } from '../../components/book-filters-modal/book-filters-modal.component';
+import { BookListComponent } from "../../components/book-list/book-list.component";
 
 @Component({
   selector: 'app-books-page',
@@ -15,8 +16,9 @@ import { BookFiltersModalComponent } from '../../components/book-filters-modal/b
     SearchInputComponent,
     BookFiltersModalComponent,
     PaginationComponent,
-    ItemsPerPageComponent
-  ],
+    ItemsPerPageComponent,
+    BookListComponent
+],
   templateUrl: './books-page.component.html',
   styles: ``
 })
@@ -28,7 +30,6 @@ export default class BooksPageComponent implements OnInit, OnDestroy {
     switchMap(() => this.booksStore.getBooks())
   ));
 
-  public books = computed(() => this.booksStore.books());
   public page = computed(() => this.booksStore.filters().page);
   public size = computed(() => this.booksStore.filters().size);
 

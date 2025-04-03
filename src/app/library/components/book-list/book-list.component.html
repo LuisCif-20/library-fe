@@ -1,0 +1,7 @@
+<div class="grid grid-cols-1 md:grid-cols-3">
+  @for (book of books(); track $index) {
+    <div class="m-2">
+      <book-card [book]="book" />
+    </div>
+  }
+</div>
