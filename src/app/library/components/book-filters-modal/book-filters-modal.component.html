@@ -1,0 +1,60 @@
+<button class="btn rounded-full bg-yb text-white hover:bg-yb/90" hoverStyle (click)="showModal.set(true)">
+  <span>filter_alt</span>
+  Filtrar
+</button>
+@if (showModal()) {
+  <app-modal [fullWidth]="true" [fullHeight]="true" (closeModal)="showModal.set(false)">
+    <form body class="flex flex-col max-h-full overflow-y-auto" [formGroup]="filtersForm" (ngSubmit)="applyFilters()">
+      <span class="flex-none font-bold text-3xl text-center my-5">Filtros</span>
+      <div class="grow grid grid-cols-1 md:grid-cols-2 overflow-y-auto">
+        <div class="col-span-full md:col-span-1 flex flex-col m-3">
+          <span class="mb-2">Existencias:</span>
+          <ngx-slider class="mt-2" [options]="quantityOptions()" formControlName="quantity" />
+        </div>
+        <div class="col-span-full md:col-span-1 flex flex-col m-3">
+          <span class="mb-2">Disponibles:</span>
+          <ngx-slider class="mt-2" [options]="quantityOptions()" formControlName="availableCopies" />
+        </div>
+        <div class="col-span-full flex flex-col m-3">
+          <span class="mb-2">Elige un rango de precio:</span>
+          <ngx-slider class="mt-2" [options]="priceOptions()" formControlName="price" />
+        </div>
+        <date-input class="m-3 col-span-full md:col-span-1"
+          [control]="filtersForm.controls.publicationStartDate"
+          [max]="filtersForm.controls.publicationEndDate.value"
+          legend="Fecha de Publicacion Inicial:"
+        />
+        <date-input class="m-3 col-span-full md:col-span-1"
+          [control]="filtersForm.controls.publicationEndDate"
+          [min]="filtersForm.controls.publicationStartDate.value"
+          legend="Fecha de Publicacion Final:"
+        />
+        <div class="m-3 col-span-full md:col-span-1">
+          <span class="mb-2">Autores:</span>
+          <div class="h-[95px] overflow-y-auto" formArrayName="authors">
+            @for (author of authors(); track $index) {
+              <div class="flex flex-row items-center">
+                <input type="checkbox" class="checkbox checkbox-primary checkbox-sm" [formControlName]="$index" />
+                <span class="truncate ml-2">{{ author.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+        <div class="m-3 col-span-full md:col-span-1">
+          <span class="mb-2">Editoriales:</span>
+          <div class="h-[95px] overflow-y-auto" formArrayName="publishers">
+            @for (publisher of publishers(); track $index) {
+              <div class="flex flex-row items-center">
+                <input type="checkbox" class="checkbox checkbox-primary checkbox-sm" [formControlName]="$index" />
+                <span class="truncate ml-2">{{ publisher.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+      <button class="mx-auto mt-5 btn bg-yb hover:bg-yb/85 text-white" [disabled]="isLoading()" type="submit">
+        Aplicar Filtros
+      </button>
+    </form>
+  </app-modal>
+}

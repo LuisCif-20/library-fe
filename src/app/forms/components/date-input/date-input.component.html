@@ -4,7 +4,7 @@
     [formControl]="control()" readonly placeholder="yyyy-mm-dd" (click)="openCalendar()"
   />
   <div popover #calendarPopover class="bg-base-200 rounded-box shadow-lg center-popover">
-    <calendar-date class="cally" (change)="onDateChange($event)" [max]="max()">
+    <calendar-date class="cally" (change)="onDateChange($event)" [max]="max()" [min]="min()">
       <span class="material-icons" slot="previous">arrow_left</span>
       <span class="material-icons" slot="next">arrow_right</span>
       <calendar-month />

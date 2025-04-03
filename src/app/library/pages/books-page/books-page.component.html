@@ -1,6 +1,10 @@
 <div class="flex flex-col h-full">
-  <search-input class="mx-auto mt-10" />
-  <app-pagination [page]="page()" (next)="changePage(1)" (previous)="changePage(-1)"
-    [hasNext]="booksStore.hasNext()" [hasPrevious]="booksStore.hasPrevious()"
-  />
+  <search-input class="mx-auto mt-10 mb-5" />
+  <book-filters-modal class="mx-auto" />
+  <div class="flex flex-row justify-between m-5">
+    <items-per-page [size]="size()" (setSize)="changeSize($event)" />
+    <app-pagination [page]="page()" (next)="changePage(1)" (previous)="changePage(-1)"
+      [hasNext]="booksStore.hasNext()" [hasPrevious]="booksStore.hasPrevious()"
+    />
+  </div>
 </div>

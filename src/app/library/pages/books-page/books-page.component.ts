@@ -1,42 +1,54 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, OnDestroy, OnInit } from '@angular/core';
+
+import { rxMethod } from '@ngrx/signals/rxjs-interop';
+import { pipe, switchMap } from 'rxjs';
 
 import { BooksStore } from '../../stores/books.store';
 import { SearchInputComponent } from '../../components/search-input/search-input.component';
 import { PaginationComponent } from 'src/app/shared/components/pagination/pagination.component';
+import { ItemsPerPageComponent } from 'src/app/shared/components/items-per-page/items-per-page.component';
+import { BookFiltersModalComponent } from '../../components/book-filters-modal/book-filters-modal.component';
 
 @Component({
   selector: 'app-books-page',
   imports: [
     SearchInputComponent,
-    PaginationComponent
+    BookFiltersModalComponent,
+    PaginationComponent,
+    ItemsPerPageComponent
   ],
   templateUrl: './books-page.component.html',
   styles: ``
 })
-export default class BooksPageComponent implements OnInit {
+export default class BooksPageComponent implements OnInit, OnDestroy {
 
   public readonly booksStore = inject(BooksStore);
 
-  private getBooks = this.booksStore.getBooks();
+  private getBooks = rxMethod<void>(pipe(
+    switchMap(() => this.booksStore.getBooks())
+  ));
 
-  private _page = signal<number>(0);
-  private _size = signal<number>(10);
-
-  public page = computed(() => this._page());
-  public size = computed(() => this._size());
   public books = computed(() => this.booksStore.books());
+  public page = computed(() => this.booksStore.filters().page);
+  public size = computed(() => this.booksStore.filters().size);
 
   constructor() { }
 
   ngOnInit(): void {
-    this.booksStore.patchPage(this._page());
-    this.booksStore.patchSize(this._size());
     this.getBooks();
   }
 
+  ngOnDestroy(): void {
+    this.booksStore.patchInitialState();
+  }
+
   public changePage(delta: 1 | -1): void {
-    this._page.update(value => value + delta);
-    this.booksStore.patchPage(this._page());
+    this.booksStore.patchPage(this.page() + delta);
+    this.getBooks();
+  }
+
+  public changeSize(size: number): void {
+    this.booksStore.patchSize(size);
     this.getBooks();
   }
 

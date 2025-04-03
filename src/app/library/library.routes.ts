@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { LibraryLayoutComponent } from './layouts/library-layout/library-layout.component';
+import { authorsResolver } from './resolvers/authors.resolver';
+import { publishersResolver } from './resolvers/publishers.resolver';
 
 const routes: Routes = [
   {
@@ -8,6 +10,10 @@ const routes: Routes = [
     children: [
       {
         path: 'books',
+        resolve: {
+          authors: authorsResolver,
+          publishers: publishersResolver
+        },
         loadComponent: () => import('./pages/books-page/books-page.component')
       },
       {
