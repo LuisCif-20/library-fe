@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Set Envs
+      - name: Set-Envs
         run: API_URL=${{ secrets.API_URL }} AWS_URL=${{ secrets.AWS_URL }} npm run set-envs
 
       - name: Build Angular app
