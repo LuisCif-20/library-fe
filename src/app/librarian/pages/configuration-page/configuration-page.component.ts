@@ -25,7 +25,7 @@ export default class ConfigurationPageComponent {
 
   public config = computed(() => this.configurationService.configuration());
 
-  public src = signal<string>(`{environment.AWS_URL}/${this.config()!.logo}`);
+  public src = signal<string>(`${environment.AWS_URL}/${this.config()!.logo}`);
 
   public configForm = this.formBuilder.group({
     name: this.formBuilder.control(this.config()!.name, [Validators.required]),
