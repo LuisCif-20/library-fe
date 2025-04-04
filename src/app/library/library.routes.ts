@@ -3,6 +3,7 @@ import { LibraryLayoutComponent } from './layouts/library-layout/library-layout.
 import { authorsResolver } from './resolvers/authors.resolver';
 import { publishersResolver } from './resolvers/publishers.resolver';
 import { bookByIdResolver } from './resolvers/book-by-id.resolver';
+import { roleGuard } from '../auth/guards/role.guard';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
       },
       {
         path: '',
+        canMatch: [roleGuard],
+        data: {
+          role: 'LIBRARIAN'
+        },
         loadChildren: () => import('../librarian/librarian.routes')
       },
       {
