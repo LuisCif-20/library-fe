@@ -1,1 +1,47 @@
-<p>book-by-id-page works!</p>
+<div class="flex flex-col h-full p-10">
+  <div class="grid grid-cols-1 md:grid-cols-3">
+    <div class="w-full p-2 shadow-md bg-base-200 rounded-2xl flex justify-center">
+      <img [src]="imageUrl()" [alt]="book()?.title" class="h-full object-cover object-center">
+    </div>
+    <div class="w-full px-0 py-5 md:px-10 md:py-0 flex flex-col">
+      <span class="font-bold text-2xl">Informacion del Autor</span>
+      <span>Nombre: {{ book()!.author!.name }}</span>
+      <span>Fecha de Nacimiento: {{ book()!.author!.birthDate }}</span>
+      <span>Nacionalidad: {{ book()!.author.nationality }}</span>
+      <span class="font-bold text-2xl mt-5">Informacion de la Editorial</span>
+      <span>Nombre: {{ book()!.publisher.name }}</span>
+      <span class="font-bold text-2xl mt-5">Titulo</span>
+      <span>{{ book()!.title }}</span>
+      <span class="font-bold text-2xl mt-5">Codigo</span>
+      <span>{{ book()!.code }}</span>
+    </div>
+    <div class="w-full px-0 md:px-10 flex flex-col">
+      <span class="font-bold text-2xl">Fecha de Publicacion</span>
+      <span>{{ book()!.publicationDate }}</span>
+      <span class="font-bold text-2xl mt-5">Precio</span>
+      <span>{{ book()!.price | currency: 'Q ' }}</span>
+      <span class="font-bold text-2xl mt-5">Disponibles</span>
+      <span>{{ book()!.availableCopies }} - Unidades</span>
+      <span class="font-bold text-2xl mt-5">ISBN</span>
+      <span>{{ book()!.isbn | isbn }}</span>
+    </div>
+  </div>
+  @if (role()) {
+    <div class="w-full p-2 py-5 flex justify-start">
+      @if(role() === 'LIBRARIAN') {
+        <edit-book-modal [book]="book()!" (updateBook)="updateView()" />
+        <button class="btn btn-error text-white rounded-full ml-3" hoverStyle (click)="onDelete()">
+          <span>delete</span>
+          Eliminar
+        </button>
+      } @else {
+        @if (book()!.availableCopies === 0) {
+          <button class="btn btn-primary text-white rounded-full" hoverStyle (click)="onReserv()">
+            <span>local_library</span>
+            Reservar
+          </button>
+        }
+      }
+    </div>
+  }
+</div>

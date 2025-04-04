@@ -1,0 +1,7 @@
+<button class="btn bg-blue-900 hover:bg-blue-900/90 text-white rounded-full" hoverStyle (click)="showModal.set(true)">
+  <span>edit</span>
+  Editar
+</button>
+@if (showModal()) {
+  <book-modal (closeModal)="showModal.set(false)" (saveBook)="onUpdateBook()" [book]="book()" />
+}

@@ -74,7 +74,7 @@ export class BookModalComponent implements OnInit {
             code,
             isbn,
             quantity,
-            publicationDate: publicationDate.toISOString().split('T').pop(),
+            publicationDate: publicationDate.toString(),
             price
           });
           this.imageUrl.set(`${environment.AWS_URL}/${imageUrl}`);

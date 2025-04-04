@@ -29,7 +29,7 @@ export class BookService {
   }
 
   public getBookById(id: string): Observable<Book> {
-    const url = `${this.BOOK_URL}/id`;
+    const url = `${this.BOOK_URL}/${id}`;
     return this.httpClient.get<Book>(url);
   }
 
@@ -50,12 +50,21 @@ export class BookService {
     const formData = new FormData();
     Object.keys(body).forEach((key) => {
       const value = body[key as keyof UpdateBook];
-      value instanceof Blob && value
+      if (value) {
+        value instanceof Blob
         ? formData.append(key, value)
         : formData.append(key, value!.toString());
+      }
     });
     const url = `${this.BOOK_URL}/${id}`;
     return this.httpClient.put<void>(url, formData).pipe(
+      catchError((error: HttpErrorResponse) => throwError(() => error))
+    );
+  }
+
+  public deleteBook(id: string): Observable<void> {
+    const url = `${this.BOOK_URL}/${id}`;
+    return this.httpClient.delete<void>(url).pipe(
       catchError((error: HttpErrorResponse) => throwError(() => error))
     );
   }

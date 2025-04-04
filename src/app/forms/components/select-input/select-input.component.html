@@ -1,7 +1,7 @@
 <fieldset class="fieldset">
   <legend class="fieldset-legend" [ngClass]="{ 'text-error' : isInvalid }">{{ legend() }}</legend>
   <select class="select" [ngClass]="{ 'input-error' : isInvalid }" [formControl]="control()">
-    <option value="" disabled selected>{{ placeholder() }}</option>
+    <option value="" disabled [selected]="control().value === ''">{{ placeholder() }}</option>
     @for (option of options(); track $index) {
       <option [value]="option.value">{{ option.label }}</option>
     }
