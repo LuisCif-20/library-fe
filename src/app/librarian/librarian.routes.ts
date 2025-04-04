@@ -19,6 +19,10 @@ const routes: Routes = [
       {
         path: 'degrees',
         loadComponent: () => import('./pages/degrees-page/degrees-page.component')
+      },
+      {
+        path: 'loans',
+        loadComponent: () => import('./pages/loans-page/loans-page.component')
       }
     ]
   }

@@ -22,6 +22,11 @@ export const librarianSidebarOptions: SidebarOption[] = [
     route: '/library/degrees'
   },
   {
+    label: 'Prestamos',
+    icon: 'style',
+    route: '/library/loans'
+  },
+  {
     label: 'Editoriales',
     icon: 'rate_review',
     route: '/library/publishers'
