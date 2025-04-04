@@ -28,7 +28,7 @@ jobs:
 
     - name: Build Angular app
       working-directory: .
-      run: npm run build -- --configuration development --output-path=../dist --base-href "/BIBLIOTECA/"
+      run: npm run build -- --configuration development --output-path=../dist --base-href "/library-fe/"
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
