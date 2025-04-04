@@ -1,0 +1,13 @@
+<div class="flex flex-col mt-10">
+  <h2 class="font-bold text-3xl text-center">Autores</h2>
+  <create-author-modal class="mx-auto mt-5" />
+  <div class="flex flex-row justify-between my-10">
+    <items-per-page [size]="size()" (setSize)="changeSize($event)" />
+    <app-pagination [page]="page()" (next)="changePage(1)" (previous)="changePage(-1)"
+      [hasNext]="authorsStore.hasNext()" [hasPrevious]="authorsStore.hasPrevious()"
+    />
+  </div>
+  <authors-table class="flex justify-center px-3 overflow-y-hidden"
+    [authors]="authors()"
+  />
+</div>

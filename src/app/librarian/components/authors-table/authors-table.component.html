@@ -1,0 +1,30 @@
+<div class="overflow-x-auto h-full md:w-auto sm:w-full">
+  <table class="table table-pin-rows">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Nombre</th>
+        <th>Nacionalidad</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (author of authors(); track author.id; let index = $index) {
+        <tr>
+          <th>{{ (index + 1) + (authorsStore.size()*authorsStore.page()) }}</th>
+          <td>{{ author.name }}</td>
+          <td>{{ author.nationality }}</td>
+          <td>{{ author.birthDate }}</td>
+          <td class="flex flex-row">
+            <edit-author-modal [author]="author" />
+            <button class="btn btn-error ml-2 text-white" hoverStyle (click)="onDelete(author.id)">
+              <span>delete</span>
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
