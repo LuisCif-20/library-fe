@@ -1,0 +1,13 @@
+<div class="card bg-base-200 h-full w-full shadow-md">
+  <figure class="h-48 overflow-hidden">
+    <img
+      [src]="src()"
+      [alt]="reserve().book.title"
+      class="h-full object-cover object-center"
+    />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-xs badge-secondary truncate">{{ reserve().expirationDate }}</span>
+    <h2 class="card-title">{{ reserve().book.title }}</h2>
+  </div>
+</div>

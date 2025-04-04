@@ -41,6 +41,14 @@ const routes: Routes = [
         loadChildren: () => import('../librarian/librarian.routes')
       },
       {
+        path: '',
+        canMatch: [roleGuard],
+        data: {
+          role: 'STUDENT'
+        },
+        loadChildren: () => import('../student/student.routes')
+      },
+      {
         path: '**',
         redirectTo: '/404'
       }
