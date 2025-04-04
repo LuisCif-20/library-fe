@@ -22,7 +22,7 @@ jobs:
       working-directory: .
       run: npm install
 
-    - name: Debug Environment Variables ..
+    - name: Debug Environment Variables
       run: |
         echo "${{ secrets.API_URL }}"
         echo "${{ secrets.AWS_URL }}"
