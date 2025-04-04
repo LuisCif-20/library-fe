@@ -8,3 +8,5 @@ export interface Publisher {
 export interface PublisherResponse extends Pagination {
   data: Publisher[];
 }
+
+export interface PublisherData extends Omit<Publisher, 'id'> { }

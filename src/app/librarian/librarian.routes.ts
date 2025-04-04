@@ -11,6 +11,10 @@ const routes: Routes = [
       {
         path: 'authors',
         loadComponent: () => import('./pages/authors-page/authors-page.component')
+      },
+      {
+        path: 'publishers',
+        loadComponent: () => import('./pages/publishers-page/publishers-page.component')
       }
     ]
   }

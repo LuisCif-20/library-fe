@@ -12,7 +12,7 @@
         legend="Fecha de Publicacion" label="El campo es obligatorio." [max]="max()"
       />
     </div>
-    <button class="mx-auto mt-5 btn bg-yb hover:bg-yb/85 text-white" type="submit">
+    <button class="mx-auto mt-5 btn bg-yb hover:bg-yb/85 text-white" type="submit" [disabled]="isLoading()">
       Guardar
     </button>
   </form>

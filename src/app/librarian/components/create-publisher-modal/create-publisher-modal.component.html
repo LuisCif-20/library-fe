@@ -1,0 +1,7 @@
+<button class="btn rounded-full btn-secondary text-white" hoverStyle (click)="showModal.set(true)">
+  <span>add_box</span>
+  Agregar
+</button>
+@if (showModal()) {
+  <publisher-modal (closeModal)="showModal.set(false)" (savePublisher)="getPublishers()" />
+}
