@@ -11,10 +11,10 @@
       <text-input class="m-3 md:col-span-2" [control]="bookForm.controls.title" legend="Titulo"
         placeholder="Book Example" label="Este campo es obligatorio."
       />
-      <text-input class="m-3 md:col-span-2" [control]="bookForm.controls.code" legend="Codigo"
+      <text-input class="m-3 md:col-span-2" [control]="bookForm.controls.code" legend="Codigo" [disabled]="book() ? true : false"
         placeholder="XXX-ABC" label="Este campo es obligatorio." mask="000-AAA" [dropCharacter]="false"
       />
-      <text-input class="m-3 md:col-span-2" [control]="bookForm.controls.isbn" legend="ISBN"
+      <text-input class="m-3 md:col-span-2" [control]="bookForm.controls.isbn" legend="ISBN" [disabled]="book() ? true : false"
         placeholder="978-XXX-XXX-XXX-X" label="Este campo es obligatorio." mask="000-000-000-000-0"
       />
       <date-input class="m-3 md:col-span-2" [control]="bookForm.controls.publicationDate"

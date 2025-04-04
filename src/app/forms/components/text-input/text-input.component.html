@@ -1,4 +1,4 @@
-<fieldset class="fieldset">
+<fieldset class="fieldset" [disabled]="disabled()">
   <legend class="fieldset-legend" [ngClass]="{ 'text-error' : isInvalid }">{{ legend() }}</legend>
   <input [type]="type()" class="input"
     [formControl]="control()"

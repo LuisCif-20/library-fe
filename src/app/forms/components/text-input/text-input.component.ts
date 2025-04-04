@@ -28,6 +28,7 @@ export class TextInputComponent {
   public min = input<number>(0);
   public max = input<number>(0);
   public step = input<number>(1);
+  public disabled = input<boolean>(false);
 
   constructor() { }
 
