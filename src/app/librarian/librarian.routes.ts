@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path: 'loans',
         loadComponent: () => import('./pages/loans-page/loans-page.component')
+      },
+      {
+        path: 'configuration',
+        loadComponent: () => import('./pages/configuration-page/configuration-page.component')
       }
     ]
   }
