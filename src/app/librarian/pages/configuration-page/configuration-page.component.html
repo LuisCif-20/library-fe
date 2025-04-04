@@ -1,0 +1,46 @@
+<div class="flex flex-col h-full p-10">
+  <h2 class="font-bold text-3xl text-center">Configuracion</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 mt-10">
+    <div class="w-full flex flex-col px-2">
+      <div class="w-full p-2 shadow-md bg-base-200 rounded-2xl flex justify-center">
+        <img [src]="src()" [alt]="config()!.name" class="h-full object-cover object-center">
+      </div>
+      <image-input class="mx-auto" [control]="configForm.controls.imageFile" (imageUrl)="src.set($event)"
+        legend="Logo" label="Este campo es obligatorio."
+      />
+    </div>
+    <div class="w-full flex flex-col px-2">
+      <text-input class="mx-auto w-75" [control]="configForm.controls.name" legend="Nombre"
+        label="El campo es obligatorio." placeholder="Biblioteca"
+      />
+      <text-input class="mx-auto w-75" [control]="configForm.controls.phone" legend="Telefono"
+        label="El campo es obligatorio." placeholder="XXXX-XXXX" mask="0000-0000"
+      />
+      <text-input class="mx-auto w-75" [control]="configForm.controls.dailyRate" legend="Tarifa Diaria"
+        label="El campo es obligatorio." type="number" [min]="0" [step]="0.01"
+      />
+      <text-input class="mx-auto w-75" [control]="configForm.controls.maxLoans" legend="Maximo de Prestamos"
+        label="El campo es obligatorio." type="number" [min]="0"
+      />
+    </div>
+    <div class="w-full flex flex-col px-2">
+      <text-input class="mx-auto w-75" [control]="configForm.controls.lateFee" legend="Cargo por Atraso"
+        label="El campo es obligatorio." type="number" [min]="0" [step]="0.01"
+      />
+      <text-input class="mx-auto w-75" [control]="configForm.controls.lossFee" legend="Cargo por Perdida"
+        label="El campo es obligatorio." type="number" [min]="0" [step]="0.01"
+      />
+      <text-input class="mx-auto w-75" [control]="configForm.controls.loanPeriodDays" legend="Periodo de Prestamo sin Cobro"
+        label="El campo es obligatorio." type="number" [min]="0"
+      />
+      <text-input class="mx-auto w-75" [control]="configForm.controls.loanOverdueLimit" legend="Limite de Dias de Prestamo"
+        label="El campo es obligatorio." type="number" [min]="0"
+      />
+    </div>
+  </div>
+  <button class="btn btn-primary text-white rounded-full mx-auto mt-10" hoverStyle (click)="onUpdateConfig()">
+    <span>store</span>
+    Actualizar
+  </button>
+
+</div>

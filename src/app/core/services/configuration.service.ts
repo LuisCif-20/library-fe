@@ -34,7 +34,16 @@ export class ConfigurationService {
   }
 
   public updateConfiguration(data: UpdateConfiguration): Observable<boolean> {
-    return this.processRequest(this.http.put<Configuration>(this.configurationUrl, data));
+    const formData = new FormData();
+    Object.keys(data).forEach((key) => {
+      const value = data[key as keyof UpdateConfiguration];
+      if (value) {
+        value instanceof Blob
+        ? formData.append(key, value)
+        : formData.append(key, value!.toString());
+      }
+    });
+    return this.processRequest(this.http.put<Configuration>(this.configurationUrl, formData));
   }
 
 }

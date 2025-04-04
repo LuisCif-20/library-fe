@@ -12,4 +12,6 @@ export interface Configuration {
   phone:            string;
 }
 
-export interface UpdateConfiguration extends Partial<Configuration> { }
+export interface UpdateConfiguration extends Omit<Configuration, 'logo'> {
+  imageFile:  Blob | null;
+}
