@@ -1,4 +1,4 @@
-name: Deploy runes talk
+name: Deploy Library
 
 on:
   push:
@@ -8,6 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    run: |
+        echo "API_URL=${API_URL}"
+        echo "AWS_URL=${AWS_URL}"
     env:
       API_URL: ${{ secrets.API_URL }}
       AWS_URL: ${{ secrets.AWS_URL }}
