@@ -38,7 +38,7 @@ import {
 } from "./chunk-JABWA3HV.js";
 import {
   environment
-} from "./chunk-QS57EMBJ.js";
+} from "./chunk-QBPE6MBL.js";
 import {
   HttpClient,
   HttpParams,
@@ -572,4 +572,4 @@ var LoansPageComponent = class _LoansPageComponent {
 export {
   LoansPageComponent as default
 };
-//# sourceMappingURL=chunk-WXRWU5ZJ.js.map
+//# sourceMappingURL=chunk-QJZH3EA5.js.map

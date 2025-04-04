@@ -1,27 +1,27 @@
 import {
   PublisherService
-} from "./chunk-BONXBZQM.js";
+} from "./chunk-PV6T3JMZ.js";
 import {
   ConfigurationService
-} from "./chunk-JHHWBRG2.js";
+} from "./chunk-33JIL4SE.js";
 import {
   ThemeSwitcherComponent
 } from "./chunk-Y2IFBUIC.js";
 import "./chunk-32ZCATMH.js";
 import {
   BookService
-} from "./chunk-CMHSZZHP.js";
+} from "./chunk-DYTPU4VI.js";
 import {
   AuthStore
-} from "./chunk-2SQF422D.js";
-import "./chunk-6FVHQWOD.js";
+} from "./chunk-AQKJADJF.js";
+import "./chunk-M62AKXZU.js";
 import {
   Router,
   RouterOutlet
 } from "./chunk-7L6NANUY.js";
 import {
   AuthorService
-} from "./chunk-CERM4BQR.js";
+} from "./chunk-Z37QWQSH.js";
 import "./chunk-OJMWA2H5.js";
 import {
   AlertService
@@ -31,7 +31,7 @@ import {
 } from "./chunk-JABWA3HV.js";
 import {
   environment
-} from "./chunk-QS57EMBJ.js";
+} from "./chunk-QBPE6MBL.js";
 import "./chunk-EHYTAPE2.js";
 import {
   catchError,
@@ -395,7 +395,7 @@ var routes = [
           authors: authorsResolver,
           publishers: publishersResolver
         },
-        loadComponent: () => import("./chunk-HBLEK53G.js")
+        loadComponent: () => import("./chunk-IARM2YAC.js")
       },
       {
         path: "books/:id",
@@ -404,7 +404,7 @@ var routes = [
           authors: authorsResolver,
           publishers: publishersResolver
         },
-        loadComponent: () => import("./chunk-QEOFLTCU.js")
+        loadComponent: () => import("./chunk-CYIJAZSS.js")
       },
       {
         path: "",
@@ -417,7 +417,7 @@ var routes = [
         data: {
           role: "LIBRARIAN"
         },
-        loadChildren: () => import("./chunk-J7UE64MJ.js")
+        loadChildren: () => import("./chunk-UH7QMXK3.js")
       },
       {
         path: "",
@@ -425,7 +425,7 @@ var routes = [
         data: {
           role: "STUDENT"
         },
-        loadChildren: () => import("./chunk-LEJQHHOP.js")
+        loadChildren: () => import("./chunk-ALKF3JUZ.js")
       },
       {
         path: "**",
@@ -438,4 +438,4 @@ var library_routes_default = routes;
 export {
   library_routes_default as default
 };
-//# sourceMappingURL=chunk-5EQE5WET.js.map
+//# sourceMappingURL=chunk-JHGTENNJ.js.map

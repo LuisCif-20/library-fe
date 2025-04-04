@@ -1,14 +1,14 @@
 import {
   ConfigurationService
-} from "./chunk-JHHWBRG2.js";
+} from "./chunk-33JIL4SE.js";
 import {
   ThemeService
 } from "./chunk-32ZCATMH.js";
 import {
   AuthStatus,
   AuthStore
-} from "./chunk-2SQF422D.js";
-import "./chunk-6FVHQWOD.js";
+} from "./chunk-AQKJADJF.js";
+import "./chunk-M62AKXZU.js";
 import {
   Router,
   RouterOutlet,
@@ -23,7 +23,7 @@ import "./chunk-CM5EFMYB.js";
 import {
   AlertService
 } from "./chunk-VVQ2XORH.js";
-import "./chunk-QS57EMBJ.js";
+import "./chunk-QBPE6MBL.js";
 import {
   provideHttpClient,
   withFetch,
@@ -68,11 +68,11 @@ var routes = [
   {
     path: "auth",
     canMatch: [publicRoutesGuard],
-    loadChildren: () => import("./chunk-3BMGBDHQ.js")
+    loadChildren: () => import("./chunk-2H6A5YII.js")
   },
   {
     path: "library",
-    loadChildren: () => import("./chunk-5EQE5WET.js")
+    loadChildren: () => import("./chunk-JHGTENNJ.js")
   },
   {
     path: "404",

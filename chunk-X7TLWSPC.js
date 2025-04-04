@@ -3,7 +3,7 @@ import {
 } from "./chunk-LTVUM2XA.js";
 import {
   BookService
-} from "./chunk-CMHSZZHP.js";
+} from "./chunk-DYTPU4VI.js";
 import {
   SelectInputComponent
 } from "./chunk-CZUM7KFZ.js";
@@ -43,7 +43,7 @@ import {
 } from "./chunk-VVQ2XORH.js";
 import {
   environment
-} from "./chunk-QS57EMBJ.js";
+} from "./chunk-QBPE6MBL.js";
 import {
   HttpStatusCode
 } from "./chunk-EHYTAPE2.js";
@@ -298,4 +298,4 @@ export {
   BooksStore,
   BookModalComponent
 };
-//# sourceMappingURL=chunk-QRPLYVMA.js.map
+//# sourceMappingURL=chunk-X7TLWSPC.js.map

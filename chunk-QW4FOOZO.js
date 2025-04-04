@@ -1,6 +1,6 @@
 import {
   AuthorService
-} from "./chunk-CERM4BQR.js";
+} from "./chunk-Z37QWQSH.js";
 import {
   ItemsPerPageComponent,
   PaginationComponent
@@ -39,7 +39,7 @@ import {
 import {
   HoverStyleDirective
 } from "./chunk-JABWA3HV.js";
-import "./chunk-QS57EMBJ.js";
+import "./chunk-QBPE6MBL.js";
 import {
   HttpStatusCode
 } from "./chunk-EHYTAPE2.js";
@@ -509,4 +509,4 @@ var AuthorsPageComponent = class _AuthorsPageComponent {
 export {
   AuthorsPageComponent as default
 };
-//# sourceMappingURL=chunk-2IAVLPO3.js.map
+//# sourceMappingURL=chunk-QW4FOOZO.js.map

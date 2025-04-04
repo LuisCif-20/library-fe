@@ -1,6 +1,6 @@
 import {
   PublisherService
-} from "./chunk-BONXBZQM.js";
+} from "./chunk-PV6T3JMZ.js";
 import {
   ItemsPerPageComponent,
   PaginationComponent
@@ -36,7 +36,7 @@ import {
 import {
   HoverStyleDirective
 } from "./chunk-JABWA3HV.js";
-import "./chunk-QS57EMBJ.js";
+import "./chunk-QBPE6MBL.js";
 import {
   HttpStatusCode
 } from "./chunk-EHYTAPE2.js";
@@ -464,4 +464,4 @@ var PublishersPageComponent = class _PublishersPageComponent {
 export {
   PublishersPageComponent as default
 };
-//# sourceMappingURL=chunk-MRCDM2AZ.js.map
+//# sourceMappingURL=chunk-LH55536J.js.map

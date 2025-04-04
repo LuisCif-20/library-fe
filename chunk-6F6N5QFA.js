@@ -6,7 +6,7 @@ import {
 } from "./chunk-CZUM7KFZ.js";
 import {
   AuthService
-} from "./chunk-6FVHQWOD.js";
+} from "./chunk-M62AKXZU.js";
 import {
   emailPattern,
   namePattern,
@@ -34,7 +34,7 @@ import {
 import {
   HoverStyleDirective
 } from "./chunk-JABWA3HV.js";
-import "./chunk-QS57EMBJ.js";
+import "./chunk-QBPE6MBL.js";
 import "./chunk-EHYTAPE2.js";
 import {
   NgClass,
@@ -438,4 +438,4 @@ var RegisterPageComponent = class _RegisterPageComponent {
 export {
   RegisterPageComponent as default
 };
-//# sourceMappingURL=chunk-KXZQ77HS.js.map
+//# sourceMappingURL=chunk-6F6N5QFA.js.map

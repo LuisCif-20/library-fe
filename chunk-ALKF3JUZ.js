@@ -1,13 +1,13 @@
 import {
   checkAuthGuard
-} from "./chunk-S6LEFLHM.js";
-import "./chunk-2SQF422D.js";
-import "./chunk-6FVHQWOD.js";
+} from "./chunk-24GWL7QT.js";
+import "./chunk-AQKJADJF.js";
+import "./chunk-M62AKXZU.js";
 import {
   RouterOutlet
 } from "./chunk-7L6NANUY.js";
 import "./chunk-OJMWA2H5.js";
-import "./chunk-QS57EMBJ.js";
+import "./chunk-QBPE6MBL.js";
 import "./chunk-EHYTAPE2.js";
 import {
   ɵsetClassDebugInfo,
@@ -43,7 +43,7 @@ var routes = [
     children: [
       {
         path: "reserves",
-        loadComponent: () => import("./chunk-KP5COXIK.js")
+        loadComponent: () => import("./chunk-43EBXZM5.js")
       }
     ]
   }
@@ -52,4 +52,4 @@ var student_routes_default = routes;
 export {
   student_routes_default as default
 };
-//# sourceMappingURL=chunk-LEJQHHOP.js.map
+//# sourceMappingURL=chunk-ALKF3JUZ.js.map

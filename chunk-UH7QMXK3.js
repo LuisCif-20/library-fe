@@ -1,13 +1,13 @@
 import {
   checkAuthGuard
-} from "./chunk-S6LEFLHM.js";
-import "./chunk-2SQF422D.js";
-import "./chunk-6FVHQWOD.js";
+} from "./chunk-24GWL7QT.js";
+import "./chunk-AQKJADJF.js";
+import "./chunk-M62AKXZU.js";
 import {
   RouterOutlet
 } from "./chunk-7L6NANUY.js";
 import "./chunk-OJMWA2H5.js";
-import "./chunk-QS57EMBJ.js";
+import "./chunk-QBPE6MBL.js";
 import "./chunk-EHYTAPE2.js";
 import {
   ɵsetClassDebugInfo,
@@ -43,23 +43,23 @@ var routes = [
     children: [
       {
         path: "authors",
-        loadComponent: () => import("./chunk-2IAVLPO3.js")
+        loadComponent: () => import("./chunk-QW4FOOZO.js")
       },
       {
         path: "publishers",
-        loadComponent: () => import("./chunk-MRCDM2AZ.js")
+        loadComponent: () => import("./chunk-LH55536J.js")
       },
       {
         path: "degrees",
-        loadComponent: () => import("./chunk-753XNDXF.js")
+        loadComponent: () => import("./chunk-YGLSQQCY.js")
       },
       {
         path: "loans",
-        loadComponent: () => import("./chunk-WXRWU5ZJ.js")
+        loadComponent: () => import("./chunk-QJZH3EA5.js")
       },
       {
         path: "configuration",
-        loadComponent: () => import("./chunk-Y5K3RKNA.js")
+        loadComponent: () => import("./chunk-TSMLD6UH.js")
       }
     ]
   }
@@ -68,4 +68,4 @@ var librarian_routes_default = routes;
 export {
   librarian_routes_default as default
 };
-//# sourceMappingURL=chunk-J7UE64MJ.js.map
+//# sourceMappingURL=chunk-UH7QMXK3.js.map

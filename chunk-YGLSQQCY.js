@@ -1,6 +1,6 @@
 import {
   DegreeService
-} from "./chunk-ON7C3T6E.js";
+} from "./chunk-ZWKJZWXZ.js";
 import {
   ItemsPerPageComponent,
   PaginationComponent
@@ -36,7 +36,7 @@ import {
 import {
   HoverStyleDirective
 } from "./chunk-JABWA3HV.js";
-import "./chunk-QS57EMBJ.js";
+import "./chunk-QBPE6MBL.js";
 import {
   HttpStatusCode
 } from "./chunk-EHYTAPE2.js";
@@ -486,4 +486,4 @@ var DegreesPageComponent = class _DegreesPageComponent {
 export {
   DegreesPageComponent as default
 };
-//# sourceMappingURL=chunk-753XNDXF.js.map
+//# sourceMappingURL=chunk-YGLSQQCY.js.map

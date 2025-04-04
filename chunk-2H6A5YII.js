@@ -3,7 +3,7 @@ import {
 } from "./chunk-RBBBAIU7.js";
 import {
   DegreeService
-} from "./chunk-ON7C3T6E.js";
+} from "./chunk-ZWKJZWXZ.js";
 import {
   ThemeSwitcherComponent
 } from "./chunk-Y2IFBUIC.js";
@@ -14,7 +14,7 @@ import {
   RouterOutlet
 } from "./chunk-7L6NANUY.js";
 import "./chunk-JABWA3HV.js";
-import "./chunk-QS57EMBJ.js";
+import "./chunk-QBPE6MBL.js";
 import "./chunk-EHYTAPE2.js";
 import {
   DestroyRef,
@@ -183,14 +183,14 @@ var routes = [
     children: [
       {
         path: "sign-in",
-        loadComponent: () => import("./chunk-EFVUZ65I.js")
+        loadComponent: () => import("./chunk-5DN5OCHE.js")
       },
       {
         path: "sign-up",
         resolve: {
           degrees: degreesResolver
         },
-        loadComponent: () => import("./chunk-KXZQ77HS.js")
+        loadComponent: () => import("./chunk-6F6N5QFA.js")
       },
       {
         path: "reset-password",
@@ -221,4 +221,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-3BMGBDHQ.js.map
+//# sourceMappingURL=chunk-2H6A5YII.js.map

@@ -1,6 +1,6 @@
 import {
   environment
-} from "./chunk-QS57EMBJ.js";
+} from "./chunk-QBPE6MBL.js";
 import {
   HttpClient,
   HttpParams
@@ -48,4 +48,4 @@ var DegreeService = class _DegreeService {
 export {
   DegreeService
 };
-//# sourceMappingURL=chunk-ON7C3T6E.js.map
+//# sourceMappingURL=chunk-ZWKJZWXZ.js.map

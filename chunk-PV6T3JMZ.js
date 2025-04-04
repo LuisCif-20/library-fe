@@ -1,6 +1,6 @@
 import {
   environment
-} from "./chunk-QS57EMBJ.js";
+} from "./chunk-QBPE6MBL.js";
 import {
   HttpClient,
   HttpParams
@@ -48,4 +48,4 @@ var PublisherService = class _PublisherService {
 export {
   PublisherService
 };
-//# sourceMappingURL=chunk-BONXBZQM.js.map
+//# sourceMappingURL=chunk-PV6T3JMZ.js.map

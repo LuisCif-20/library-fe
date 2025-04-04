@@ -1,6 +1,6 @@
 import {
   ReservationService
-} from "./chunk-64AIT5GY.js";
+} from "./chunk-Y7ARGTLF.js";
 import {
   ItemsPerPageComponent,
   PaginationComponent
@@ -18,7 +18,7 @@ import {
 import "./chunk-CM5EFMYB.js";
 import {
   environment
-} from "./chunk-QS57EMBJ.js";
+} from "./chunk-QBPE6MBL.js";
 import "./chunk-EHYTAPE2.js";
 import {
   __objRest,
@@ -198,4 +198,4 @@ var ReservesPageComponent = class _ReservesPageComponent {
 export {
   ReservesPageComponent as default
 };
-//# sourceMappingURL=chunk-KP5COXIK.js.map
+//# sourceMappingURL=chunk-43EBXZM5.js.map

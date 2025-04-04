@@ -1,6 +1,6 @@
 import {
   environment
-} from "./chunk-QS57EMBJ.js";
+} from "./chunk-QBPE6MBL.js";
 import {
   HttpClient
 } from "./chunk-EHYTAPE2.js";
@@ -50,4 +50,4 @@ var ConfigurationService = class _ConfigurationService {
 export {
   ConfigurationService
 };
-//# sourceMappingURL=chunk-JHHWBRG2.js.map
+//# sourceMappingURL=chunk-33JIL4SE.js.map
