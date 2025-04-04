@@ -29,8 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "baseHref": "/BIBLIOTECA/"
+            "scripts": []
           },
           "configurations": {
             "production": {
