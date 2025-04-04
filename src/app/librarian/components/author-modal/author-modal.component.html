@@ -1,0 +1,20 @@
+<app-modal [fullWidth]="true" (closeModal)="closeModal.emit()">
+  <form body class="flex flex-col max-h-full overflow-y-auto" [formGroup]="authorForm" (ngSubmit)="onSaveAuthor()">
+    <span class="flex-none font-bold text-3xl text-center my-5">Datos del Autor</span>
+    <div class="grow grid grid-cols-1 md:grid-cols-6 overflow-y-auto">
+      <text-input class="m-3 md:col-span-2" [control]="authorForm.controls.name" legend="Nombre"
+        placeholder="Nick" label="Este campo es obligatorio."
+      />
+      <text-input class="m-3 md:col-span-2" [control]="authorForm.controls.nationality" legend="Nacionalidad"
+        placeholder="Guatemalteco" label="Este campo es obligatorio."
+      />
+      <date-input class="m-3 md:col-span-2" [control]="authorForm.controls.birthDate"
+        legend="Fecha de Publicacion" label="El campo es obligatorio." [max]="max()"
+      />
+    </div>
+    <button class="mx-auto mt-5 btn bg-yb hover:bg-yb/85 text-white" type="submit" [disabled]="isLoading()">
+      Guardar
+    </button>
+  </form>
+</app-modal>
+

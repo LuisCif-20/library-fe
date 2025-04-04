@@ -1,8 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '@envs/environment';
-import { Observable } from 'rxjs';
-import { PublisherResponse } from '../interfaces/publisher.interface';
+import { catchError, Observable, throwError } from 'rxjs';
+import { PublisherData, PublisherResponse } from '../interfaces/publisher.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,26 @@ export class PublisherService {
       params = params.set('size', size);
     }
     return this.httpClient.get<PublisherResponse>(this.PUBLISHER_URL, { params });
+  }
+
+  public createPublisher(body: PublisherData): Observable<void> {
+    return this.httpClient.post<void>(this.PUBLISHER_URL, body).pipe(
+      catchError((error: HttpErrorResponse) => throwError(() => error))
+    );
+  }
+
+  public updatePublisher(id: string, body: PublisherData): Observable<void> {
+    const url = `${this.PUBLISHER_URL}/${id}`;
+    return this.httpClient.put<void>(url, body).pipe(
+      catchError((error: HttpErrorResponse) => throwError(() => error))
+    );
+  }
+
+  public deletePublisher(id: string): Observable<void> {
+    const url = `${this.PUBLISHER_URL}/${id}`;
+    return this.httpClient.delete<void>(url).pipe(
+      catchError((error: HttpErrorResponse) => throwError(() => error))
+    );
   }
 
 }

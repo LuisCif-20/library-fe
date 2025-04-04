@@ -1,0 +1,16 @@
+<app-modal [fullWidth]="true" (closeModal)="closeModal.emit()">
+  <form body class="flex flex-col max-h-full overflow-y-auto" [formGroup]="loanForm" (ngSubmit)="onRegisterAction()">
+    <span class="flex-none font-bold text-3xl text-center my-5">Carrera</span>
+    <div class="grow grid grid-cols-1 md:grid-cols-6 overflow-y-auto">
+      <text-input class="m-3 md:col-span-3" [control]="loanForm.controls.carnet" legend="Carnet"
+        placeholder="XXXXXXXXX" label="Este campo es obligatorio." mask="000000000"
+      />
+      <text-input class="m-3 md:col-span-3" [control]="loanForm.controls.carnet" legend="Codigo del Libro"
+        placeholder="XXX-ABC" label="Este campo es obligatorio." mask="000-AAA" [dropCharacter]="false"
+      />
+    </div>
+    <button class="mx-auto mt-5 btn bg-yb hover:bg-yb/85 text-white" type="submit" [disabled]="isLoading()">
+      Guardar
+    </button>
+  </form>
+</app-modal>

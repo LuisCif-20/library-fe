@@ -1,0 +1,13 @@
+<div class="flex flex-col mt-10">
+  <h2 class="font-bold text-3xl text-center">Carreras</h2>
+  <create-degree-modal class="mx-auto mt-5" />
+  <div class="flex flex-row justify-between my-10">
+    <items-per-page [size]="size()" (setSize)="changeSize($event)" />
+    <app-pagination [page]="page()" (next)="changePage(1)" (previous)="changePage(-1)"
+      [hasNext]="degreesStore.hasNext()" [hasPrevious]="degreesStore.hasPrevious()"
+    />
+  </div>
+  <degrees-table class="flex justify-center px-3 overflow-y-hidden mb-5"
+    [degrees]="degrees()"
+  />
+</div>

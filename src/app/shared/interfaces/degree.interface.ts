@@ -9,3 +9,5 @@ export interface Degree {
 export interface DegreeResponse extends Pagination {
   data: Degree[]
 }
+
+export interface DegreeData extends Omit<Degree, 'id'> {}

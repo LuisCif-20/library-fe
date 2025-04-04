@@ -17,20 +17,30 @@ export const librarianSidebarOptions: SidebarOption[] = [
     route: '/library/authors'
   },
   {
+    label: 'Carreras',
+    icon: 'school',
+    route: '/library/degrees'
+  },
+  {
+    label: 'Prestamos',
+    icon: 'style',
+    route: '/library/loans'
+  },
+  {
     label: 'Editoriales',
     icon: 'rate_review',
     route: '/library/publishers'
   },
   {
     label: 'Estudiantes',
-    icon: 'school',
+    icon: 'supervised_user_circle',
     route: '/library/students'
   },
-  {
-    label: 'Cargar Datos',
-    icon: 'upload',
-    route: '/library/data-upload'
-  },
+  // {
+  //   label: 'Cargar Datos',
+  //   icon: 'upload',
+  //   route: '/library/data-upload'
+  // },
   {
     label: 'Configuracion',
     icon: 'settings_suggest',

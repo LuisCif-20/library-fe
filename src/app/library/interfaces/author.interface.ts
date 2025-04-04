@@ -10,3 +10,7 @@ export interface Author {
 export interface AuthorResponse extends Pagination {
   data: Author[];
 }
+
+export interface AuthorData extends Omit<Author, 'id' | 'birthDate'> {
+  birthDate: string;
+}

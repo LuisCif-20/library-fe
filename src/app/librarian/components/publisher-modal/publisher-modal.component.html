@@ -1,0 +1,13 @@
+<app-modal (closeModal)="closeModal.emit()">
+  <form body class="flex flex-col max-h-full overflow-y-auto" [formGroup]="publisherForm" (ngSubmit)="onSavePublisher()">
+    <span class="flex-none font-bold text-3xl text-center my-5">Editorial</span>
+    <text-input class="m-3" [control]="publisherForm.controls.name" legend="Nombre"
+        placeholder="Nick" label="Este campo es obligatorio."
+      />
+    <button class="mx-auto mt-5 btn bg-yb hover:bg-yb/85 text-white" type="submit" [disabled]="isLoading()">
+      Guardar
+    </button>
+  </form>
+</app-modal>
+
+

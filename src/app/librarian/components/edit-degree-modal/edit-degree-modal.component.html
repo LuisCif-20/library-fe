@@ -1,0 +1,9 @@
+<button class="btn bg-blue-900 hover:bg-blue-900/90 text-white" hoverStyle (click)="showModal.set(true)">
+  <span>edit</span>
+  Editar
+</button>
+@if (showModal()) {
+  <degree-modal (closeModal)="showModal.set(false)" (saveDegree)="getDegrees()" [degree]="degree()" />
+}
+
+

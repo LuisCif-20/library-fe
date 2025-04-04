@@ -1,8 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '@envs/environment';
-import { AuthorResponse } from '../interfaces/author.interface';
-import { Observable } from 'rxjs';
+import { AuthorData, AuthorResponse } from '../interfaces/author.interface';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,4 +25,25 @@ export class AuthorService {
     }
     return this.httpClient.get<AuthorResponse>(this.AUTHOR_URL, { params });
   }
+
+  public createAuthor(body: AuthorData): Observable<void> {
+    return this.httpClient.post<void>(this.AUTHOR_URL, body).pipe(
+      catchError((error: HttpErrorResponse) => throwError(() => error))
+    );
+  }
+
+  public updateAuthor(id: string, body: AuthorData): Observable<void> {
+    const url = `${this.AUTHOR_URL}/${id}`;
+    return this.httpClient.put<void>(url, body).pipe(
+      catchError((error: HttpErrorResponse) => throwError(() => error))
+    );
+  }
+
+  public deleteAuthor(id: string): Observable<void> {
+    const url = `${this.AUTHOR_URL}/${id}`;
+    return this.httpClient.delete<void>(url).pipe(
+      catchError((error: HttpErrorResponse) => throwError(() => error))
+    );
+  }
+
 }

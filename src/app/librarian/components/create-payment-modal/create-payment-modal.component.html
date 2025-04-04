@@ -1,0 +1,7 @@
+<button class="btn rounded-full btn-primary text-white" hoverStyle (click)="showModal.set(true)">
+  <span>payments</span>
+  Registrar Devolucion
+</button>
+@if (showModal()) {
+  <loan-modal (closeModal)="showModal.set(false)" (saveLoan)="getLoans()" action="payment" />
+}
