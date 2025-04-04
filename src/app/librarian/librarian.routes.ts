@@ -15,6 +15,10 @@ const routes: Routes = [
       {
         path: 'publishers',
         loadComponent: () => import('./pages/publishers-page/publishers-page.component')
+      },
+      {
+        path: 'degrees',
+        loadComponent: () => import('./pages/degrees-page/degrees-page.component')
       }
     ]
   }
