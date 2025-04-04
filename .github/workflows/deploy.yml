@@ -22,14 +22,6 @@ jobs:
       working-directory: .
       run: npm install
 
-    # - name: Debug Environment Variables
-    #   run: |
-    #     echo "${{ secrets.API_URL }}"
-    #     echo "${{ secrets.AWS_URL }}"
-    #   env:
-    #     API_URL: ${{ secrets.API_URL }}
-    #     AWS_URL: ${{ secrets.AWS_URL }}
-
     - name: Set Envs
       working-directory: .
       run: API_URL=${{ secrets.API_URL }} AWS_URL=${{ secrets.AWS_URL }} npm run set-envs
@@ -41,5 +33,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.LIBRARY }}
+        github_token: ${{ secrets.TOKEN }}
         publish_dir: dist/browser
