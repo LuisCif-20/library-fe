@@ -1,6 +1,6 @@
 import { Pagination } from "src/app/shared/interfaces/pagination.interface";
 
-export interface AuthorItem {
+export interface Author {
   id:          string;
   name:        string;
   nationality: string;
@@ -8,5 +8,5 @@ export interface AuthorItem {
 }
 
 export interface AuthorResponse extends Pagination {
-  data: AuthorItem[];
+  data: Author[];
 }

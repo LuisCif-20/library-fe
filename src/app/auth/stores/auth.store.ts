@@ -43,7 +43,10 @@ export const AuthStore = signalStore(
             })
           )
         }),
-        catchError(() => of(false))
+        catchError(() => {
+          patchState(store, { authStatus: AuthStatus.NOT_AUTHENTICATED })
+          return of(false);
+        })
       )
     },
     login(body: Login): Observable<boolean> {

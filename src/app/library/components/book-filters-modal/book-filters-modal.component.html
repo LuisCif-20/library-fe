@@ -35,7 +35,7 @@
             @for (author of authors(); track $index) {
               <div class="flex flex-row items-center">
                 <input type="checkbox" class="checkbox checkbox-primary checkbox-sm" [formControlName]="$index" />
-                <span class="truncate ml-2">{{ author.name }}</span>
+                <span class="truncate ml-2">{{ author.label }}</span>
               </div>
             }
           </div>
@@ -46,7 +46,7 @@
             @for (publisher of publishers(); track $index) {
               <div class="flex flex-row items-center">
                 <input type="checkbox" class="checkbox checkbox-primary checkbox-sm" [formControlName]="$index" />
-                <span class="truncate ml-2">{{ publisher.name }}</span>
+                <span class="truncate ml-2">{{ publisher.label }}</span>
               </div>
             }
           </div>

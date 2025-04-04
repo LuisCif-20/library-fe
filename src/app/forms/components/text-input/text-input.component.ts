@@ -24,6 +24,10 @@ export class TextInputComponent {
   public placeholder = input<string>();
   public label = input<string>();
   public mask = input<string>();
+  public dropCharacter = input<boolean>(true);
+  public min = input<number>(0);
+  public max = input<number>(0);
+  public step = input<number>(1);
 
   constructor() { }
 

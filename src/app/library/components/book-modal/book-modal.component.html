@@ -1,0 +1,44 @@
+<app-modal [fullWidth]="true" [fullHeight]="true" (closeModal)="closeModal.emit()">
+  <form body class="flex flex-col max-h-full overflow-y-auto" [formGroup]="bookForm" (ngSubmit)="onSaveBook()">
+    <span class="flex-none font-bold text-3xl text-center my-5">Datos del Libro</span>
+    <div class="grow grid grid-cols-1 md:grid-cols-6 overflow-y-auto">
+      <select-input class="m-3 md:col-span-3" [control]="bookForm.controls.authorId" [options]="authors()"
+        legend="Author" label="Este campo es obligatorio."
+      />
+      <select-input class="m-3 md:col-span-3" [control]="bookForm.controls.publisherId" [options]="publishers()"
+        legend="Editorial" label="Este campo es obligatorio."
+      />
+      <text-input class="m-3 md:col-span-2" [control]="bookForm.controls.title" legend="Titulo"
+        placeholder="Book Example" label="Este campo es obligatorio."
+      />
+      <text-input class="m-3 md:col-span-2" [control]="bookForm.controls.code" legend="Codigo"
+        placeholder="XXX-ABC" label="Este campo es obligatorio." mask="000-AAA" [dropCharacter]="false"
+      />
+      <text-input class="m-3 md:col-span-2" [control]="bookForm.controls.isbn" legend="ISBN"
+        placeholder="978-XXX-XXX-XXX-X" label="Este campo es obligatorio." mask="000-000-000-000-0"
+      />
+      <date-input class="m-3 md:col-span-2" [control]="bookForm.controls.publicationDate"
+        legend="Fecha de Publicacion" label="El campo es obligatorio." [max]="max()"
+      />
+      <text-input class="m-3 md:col-span-2" [control]="bookForm.controls.quantity" legend="Copias"
+        placeholder="0" label="Este campo es obligatorio." type="number" [min]="1" [max]="50" [step]="1"
+      />
+      <text-input class="m-3 md:col-span-2" [control]="bookForm.controls.price" legend="Precio"
+        placeholder="0.00" label="Este campo es obligatorio."  type="number" [min]="1" [max]="1000" [step]="0.01"
+      />
+      <image-input class="m-3 md:col-span-4" [control]="bookForm.controls.imageFile"
+        legend="Foto del Libro" (imageUrl)="imageUrl.set($event)"
+      />
+      @if (imageUrl()) {
+        <div class="m-3 md:col-span-2 h-[70px] flex justify-center items-end">
+          <div class="p-1 w-[70px] h-full bg-base-300 shadow-md rounded-xl flex justify-center">
+            <img [src]="imageUrl()" alt="Imagen del Libro" class="h-full object-cover object-center">
+          </div>
+        </div>
+      }
+    </div>
+    <button class="mx-auto mt-5 btn bg-yb hover:bg-yb/85 text-white" type="submit">
+      Guardar
+    </button>
+  </form>
+</app-modal>

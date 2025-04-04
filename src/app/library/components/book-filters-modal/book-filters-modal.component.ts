@@ -5,12 +5,13 @@ import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
 import { FormControl, NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { DateInputComponent } from "../../../forms/components/date-input/date-input.component";
 import { ActivatedRoute } from '@angular/router';
-import { AuthorItem } from '../../interfaces/author.interface';
-import { PublisherItem } from '../../interfaces/publisher.interface';
-import { Filters, SomeFilters } from '../../interfaces/books.store.interface';
+import { Author } from '../../interfaces/author.interface';
+import { Publisher } from '../../interfaces/publisher.interface';
+import { SomeFilters } from '../../interfaces/books.store.interface';
 import { BooksStore } from '../../stores/books.store';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { pipe, switchMap } from 'rxjs';
+import { SelectOption } from 'src/app/forms/interfaces/select-input.interface';
 
 const OPTIONS: Options = {
   step: 1,
@@ -42,8 +43,8 @@ export class BookFiltersModalComponent implements OnInit {
   public showModal = signal<boolean>(false);
   public isLoading = signal<boolean>(false);
 
-  public authors = signal<AuthorItem[]>([]);
-  public publishers = signal<PublisherItem[]>([]);
+  public authors = signal<SelectOption[]>([]);
+  public publishers = signal<SelectOption[]>([]);
 
   public priceOptions = signal<Options>({
     floor: 0,
@@ -87,9 +88,9 @@ export class BookFiltersModalComponent implements OnInit {
     });
   }
 
-  private getSelectedOptions(items: AuthorItem[] | PublisherItem[], selected: boolean[]): string[] {
+  private getSelectedOptions(items: SelectOption[], selected: boolean[]): string[] {
     return selected.map((value, index) => {
-      return value ? items[index].id : null;
+      return value ? items[index].value : null;
     }).filter((value) => value !== null);
   }
 

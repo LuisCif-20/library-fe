@@ -1,10 +1,10 @@
 import { Pagination } from "src/app/shared/interfaces/pagination.interface";
 
-export interface PublisherItem {
+export interface Publisher {
   id:          string;
   name:        string;
 }
 
 export interface PublisherResponse extends Pagination {
-  data: PublisherItem[];
+  data: Publisher[];
 }
