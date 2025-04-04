@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/environments/environment.ts"],
+  "sourcesContent": ["export const environment = {\n  API_URL: \"http://35.202.186.216:4000/api/v1\",\n  AWS_URL: \"https://library-dev-ayd2.s3.us-east-2.amazonaws.com\"\n};"],
+  "mappings": ";AAAO,IAAM,cAAc;EACzB,SAAS;EACT,SAAS;;",
+  "names": []
+}

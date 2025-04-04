@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/auth/layouts/auth-layout/auth-layout.component.css"],
+  "sourcesContent": [".background {\n  background: linear-gradient(45deg, #424A69, #00053c, #1C398E);\n  background-size: 300% 300%;\n  animation: gradientShift 10s ease infinite;\n}\n\n@keyframes gradientShift {\n  0% {\n    background-position: 0% 100%;\n  }\n  50% {\n    background-position: 100% 0%;\n  }\n  100% {\n    background-position: 0% 100%;\n  }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE;IAAA;MAAA,KAAA;MAAA,OAAA;MAAA,OAAA;MAAA;AACA,mBAAA,KAAA;AACA,aAAA,cAAA,IAAA,KAAA;AACF;AAEA,WAHE;AAIA;AACE,yBAAA,GAAA;AACF;AACA;AACE,yBAAA,KAAA;AACF;AACA;AACE,yBAAA,GAAA;AACF;AACF;",
+  "names": []
+}

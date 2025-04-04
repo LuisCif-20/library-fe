@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/auth/guards/check-auth.guard.ts"],
+  "sourcesContent": ["import { inject } from '@angular/core';\nimport { CanActivateChildFn, Router } from '@angular/router';\nimport { AuthStore } from '../stores/auth.store';\nimport { AuthStatus } from '../interfaces/auth.store.interface';\n\nexport const checkAuthGuard: CanActivateChildFn = (childRoute, state) => {\n  const authStore = inject(AuthStore);\n  if (authStore.authStatus() === AuthStatus.AUTHENTICATED) return true;\n  const router = inject(Router);\n  return router.createUrlTree(['/library']);\n};\n"],
+  "mappings": ";;;;;;;;;;;;AAKO,IAAM,iBAAqC,CAAC,YAAY,UAAS;AACtE,QAAM,YAAY,OAAO,SAAS;AAClC,MAAI,UAAU,WAAU,MAAO,WAAW;AAAe,WAAO;AAChE,QAAM,SAAS,OAAO,MAAM;AAC5B,SAAO,OAAO,cAAc,CAAC,UAAU,CAAC;AAC1C;",
+  "names": []
+}

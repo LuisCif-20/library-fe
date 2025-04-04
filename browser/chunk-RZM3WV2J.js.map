@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/forms/validators/patterns.ts"],
+  "sourcesContent": ["export const namePattern: RegExp = /^[A-Za-zÀ-ÿ' ]+$/;\nexport const emailPattern: RegExp = /^[a-zA-Z\\d._]+@[a-zA-Z]+\\.[a-zA-Z]{2,}$/;\nexport const ISBNPattern: RegExp = /^978\\d{10}$/;\nexport const codePattern: RegExp = /^[0-9]{3}-[A-Z]{3}$/;\nexport const passwordPattern: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#%$!%*?&<>:;.,_\\-\\(\\)\\[\\]\\{\\}])[A-Za-z\\d@#%$!%*?&<>:;.,_\\-\\(\\)\\[\\]\\{\\}]{5,}$/;\n"],
+  "mappings": ";AAAO,IAAM,cAAsB;AAC5B,IAAM,eAAuB;AAC7B,IAAM,cAAsB;AAC5B,IAAM,cAAsB;AAC5B,IAAM,kBAA0B;",
+  "names": []
+}

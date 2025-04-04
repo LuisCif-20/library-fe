@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/forms/validators/custom-validators.ts"],
+  "sourcesContent": ["import { ValidationErrors, AbstractControl } from '@angular/forms';\n\nexport const isFieldOneEqualsFieldTwo = (field_1: string, field_2: string) => {\n    return (formGroup: AbstractControl): ValidationErrors | null => {\n        const field_1_value: string = formGroup.get(field_1)?.value;\n        const field_2_value: string = formGroup.get(field_2)?.value;\n        if (field_1_value !== field_2_value) {\n            formGroup.get(field_2)?.setErrors({ notEqual: true });\n            return { notEqual: true };\n        }\n        formGroup.get(field_2)?.setErrors(null);\n        return null;\n    }\n}\n"],
+  "mappings": ";AAEO,IAAM,2BAA2B,CAAC,SAAiB,YAAmB;AACzE,SAAO,CAAC,cAAuD;AAC3D,UAAM,gBAAwB,UAAU,IAAI,OAAO,GAAG;AACtD,UAAM,gBAAwB,UAAU,IAAI,OAAO,GAAG;AACtD,QAAI,kBAAkB,eAAe;AACjC,gBAAU,IAAI,OAAO,GAAG,UAAU,EAAE,UAAU,KAAI,CAAE;AACpD,aAAO,EAAE,UAAU,KAAI;IAC3B;AACA,cAAU,IAAI,OAAO,GAAG,UAAU,IAAI;AACtC,WAAO;EACX;AACJ;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/services/alert.service.ts"],
+  "sourcesContent": ["import { computed, Injectable, signal } from '@angular/core';\n\nimport { Alert, AlertVariant } from '../interfaces/alert.interface';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AlertService {\n\n  private _alert = signal<Alert | null>(null);\n\n  public alert = computed(() => this._alert());\n\n  constructor() { }\n\n  public showAlert(message: string, type: AlertVariant): void {\n    const icon = type === \"success\" ? 'task_alt' : type;\n    this._alert.set({ message, type, icon });\n    setTimeout(() => {\n      this._alert.set(null);\n    }, 2500);\n  }\n\n}\n"],
+  "mappings": ";;;;;;;AAOM,IAAO,eAAP,MAAO,cAAY;EAEf,SAAS,OAAqB,IAAI;EAEnC,QAAQ,SAAS,MAAM,KAAK,OAAM,CAAE;EAE3C,cAAA;EAAgB;EAET,UAAU,SAAiB,MAAkB;AAClD,UAAM,OAAO,SAAS,YAAY,aAAa;AAC/C,SAAK,OAAO,IAAI,EAAE,SAAS,MAAM,KAAI,CAAE;AACvC,eAAW,MAAK;AACd,WAAK,OAAO,IAAI,IAAI;IACtB,GAAG,IAAI;EACT;;qCAdW,eAAY;EAAA;4EAAZ,eAAY,SAAZ,cAAY,WAAA,YAFX,OAAM,CAAA;;",
+  "names": []
+}
