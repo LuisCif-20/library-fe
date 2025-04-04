@@ -23,8 +23,8 @@ jobs:
 
     - name: Debug Environment Variables
       run: |
-        echo "API_URL=${API_URL}"
-        echo "AWS_URL=${AWS_URL}"
+        echo "${{ secrets.API_URL }}"
+        echo "${{ secrets.AWS_URL }}"
       env:
         API_URL: ${{ secrets.API_URL }}
         AWS_URL: ${{ secrets.AWS_URL }}
