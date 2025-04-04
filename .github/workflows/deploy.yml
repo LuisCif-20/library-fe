@@ -22,10 +22,7 @@ jobs:
         run: npm install
 
       - name: Set Envs
-        run: |
-          echo "API_URL=${{ secrets.API_URL }}" >> $GITHUB_ENV
-          echo "AWS_URL=${{ secrets.AWS_URL }}" >> $GITHUB_ENV
-          npm run set-envs
+        run: API_URL=${{ secrets.API_URL }} AWS_URL=${{ secrets.AWS_URL }} npm run set-envs
 
       - name: Build Angular app
         run: npm run build -- --configuration development --base-href "/library-fe/"
