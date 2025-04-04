@@ -21,7 +21,7 @@ jobs:
       working-directory: .
       run: npm install
 
-    - name: Debug Environment Variables .
+    - name: Debug Environment Variables ..
       env:
         API_URL: ${{ secrets.API_URL }}
         AWS_URL: ${{ secrets.AWS_URL }}
