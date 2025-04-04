@@ -1,0 +1,39 @@
+name: Deploy runes talk
+
+on:
+  push:
+    branches:
+      - auxDev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      API_URL: ${{ secrets.API_URL }}
+      AWS_URL: ${{ secrets.AWS_URL }}
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 22.3.0
+
+    - name: Install dependencies
+      working-directory: .
+      run: npm install
+
+    - name: Set Envs
+      working-directory: .
+      run: npm run set-envs
+
+    - name: Build Angular app
+      working-directory: .
+      run: npm run build -- --configuration development --output-path=../dist --base-href "/BIBLIOTECA/"
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.LIBRARY }}
+        publish_dir: dist/browser
