@@ -1,0 +1,13 @@
+<div class="flex flex-col mt-10">
+  <h2 class="font-bold text-3xl text-center">Editoriales</h2>
+  <create-publisher-modal class="mx-auto mt-5" />
+  <div class="flex flex-row justify-between my-10">
+    <items-per-page [size]="size()" (setSize)="changeSize($event)" />
+    <app-pagination [page]="page()" (next)="changePage(1)" (previous)="changePage(-1)"
+      [hasNext]="publishersStore.hasNext()" [hasPrevious]="publishersStore.hasPrevious()"
+    />
+  </div>
+  <publishers-table class="flex justify-center px-3 overflow-y-hidden mb-5"
+    [publishers]="publishers()"
+  />
+</div>

@@ -1,0 +1,12 @@
+<div class="grid grid-cols-1 md:grid-cols-4">
+  @if (isLibrarian()) {
+    <div class="m-2">
+      <add-book-modal />
+    </div>
+  }
+  @for (book of books(); track $index) {
+    <div class="m-2">
+      <book-card [book]="book" />
+    </div>
+  }
+</div>

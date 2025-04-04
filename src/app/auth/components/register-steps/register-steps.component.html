@@ -1,0 +1,20 @@
+<ul class="steps w-full">
+  <li class="step text-[10px]" [ngClass]="{ 'step-primary' : isValid(1, personalForm()) }">
+    <span class="step-icon">
+      <span [class]="getIconType(personalForm())">face</span>
+    </span>
+    Personales
+  </li>
+  <li class="step text-[10px]" [ngClass]="{ 'step-primary' : isValid(2, academicForm()) }">
+    <span class="step-icon">
+      <span [class]="getIconType(academicForm())">school</span>
+    </span>
+    Academicos
+  </li>
+  <li class="step text-[10px]" [ngClass]="{ 'step-primary' : isValid(3, accountForm()) }">
+    <span class="step-icon">
+      <span [class]="getIconType(accountForm())">manage_accounts</span>
+    </span>
+    Cuenta
+  </li>
+</ul>

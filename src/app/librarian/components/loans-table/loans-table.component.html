@@ -1,0 +1,57 @@
+<div class="overflow-x-auto h-full md:w-auto sm:w-full">
+  <table class="table table-pin-rows">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Libro</th>
+        <th>Estudiante</th>
+        <th>Deuda</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (loan of loans(); track loan.id; let index = $index) {
+        <tr>
+          <th>{{ (index + 1) + (loansStore.size()*loansStore.page()) }}</th>
+          <td>
+            <div class="flex items-center gap-3">
+              <div class="avatar">
+                <div class="mask mask-squircle h-12 w-12">
+                  <img
+                    [src]="getUrl(loan.book.imageUrl)"
+                    [alt]="loan.book.title" />
+                </div>
+              </div>
+              <div>
+                <div class="font-bold">{{ loan.book.author }}</div>
+                <div class="text-sm opacity-50">{{ loan.book.publicationDate }}</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="flex items-center gap-3">
+              <div class="avatar">
+                <div class="mask mask-squircle h-12 w-12">
+                  <img
+                    [src]="getUrl(loan.student.imageUrl)"
+                    [alt]="loan.student.name" />
+                </div>
+              </div>
+              <div>
+                <div class="font-bold">{{ loan.student.name }}</div>
+                <div class="text-sm opacity-50">{{ loan.student.carnet }} - {{ loan.student.isSanctioned ? 'Sancionado' : 'Sin Sancion' }}</div>
+              </div>
+            </div>
+          </td>
+          <td>{{ loan.debt | currency: 'Q ' }}</td>
+          <td class="flex flex-row">
+            <button class="btn btn-error ml-2 text-white" hoverStyle (click)="onDelete(loan.id)">
+              <span>delete</span>
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

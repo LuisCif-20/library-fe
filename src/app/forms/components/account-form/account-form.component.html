@@ -1,0 +1,13 @@
+@if (!isFormNull()) {
+  <div class="grid grid-cols-2 gap-x-2">
+    <text-input [control]="form()!.controls.email" type="text" legend="Email" placeholder="nick@example.com"
+      label="El email es obligatorio." />
+    <text-input [control]="form()!.controls.password" type="password" legend="Contraseña" placeholder="••••••••"
+      label="Usa mayúsculas, minúsculas, números y símbolos." />
+  </div>
+  <div class="grid grid-cols-5 gap-x-2">
+    <text-input [control]="form()!.controls.confirmPassword" type="password" legend="Repite tu Contraseña"
+      placeholder="••••••••" label="El campo no coincide." class="col-span-3" />
+    <ng-content select="[buttons]" />
+  </div>
+}

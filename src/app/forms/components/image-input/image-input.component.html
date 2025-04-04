@@ -1,0 +1,11 @@
+<fieldset class="fieldset">
+  <legend class="fieldset-legend" [ngClass]="{ 'text-error' : isInvalid }">{{ legend() }}</legend>
+  <input type="file"
+    class="file-input"
+    [ngClass]="{ 'input-error' : isInvalid }"
+    (change)="catchImage($event)"
+  />
+  @if (label() && isInvalid) {
+    <p class="fieldset-label text-error text-[8px]">{{ label() }}</p>
+  }
+</fieldset>

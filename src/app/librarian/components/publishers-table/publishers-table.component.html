@@ -1,0 +1,26 @@
+<div class="overflow-x-auto h-full md:w-auto sm:w-full">
+  <table class="table table-pin-rows">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Nombre</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (publisher of publishers(); track publisher.id; let index = $index) {
+        <tr>
+          <th>{{ (index + 1) + (publishersStore.size()*publishersStore.page()) }}</th>
+          <td>{{ publisher.name }}</td>
+          <td class="flex flex-row">
+            <edit-publisher-modal [publisher]="publisher" />
+            <button class="btn btn-error ml-2 text-white" hoverStyle (click)="onDelete(publisher.id)">
+              <span>delete</span>
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

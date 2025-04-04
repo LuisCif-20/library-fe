@@ -1,0 +1,20 @@
+<div class="card bg-base-200 h-full w-full shadow-md">
+  <figure class="h-48 overflow-hidden">
+    <img
+      [src]="src()"
+      [alt]="book().title"
+      class="h-full object-cover object-center"
+    />
+  </figure>
+  <div class="card-body">
+    <span class="badge badge-xs badge-secondary truncate">{{ book().author }}</span>
+    <h2 class="card-title">{{ book().title }}</h2>
+    <p>{{ book().publicationDate }}</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary" hoverStyle [routerLink]="link()">
+        <span>visibility</span>
+        Ver
+      </button>
+    </div>
+  </div>
+</div>

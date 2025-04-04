@@ -1,0 +1,10 @@
+@if (!isFormNull()) {
+  <div class="grid grid-cols-2 gap-x-2">
+    <text-input [control]="form()!.controls.carnet" type="text" legend="Carné" placeholder="XXXXXXXXX"
+      label="El campo es obligatorio." mask="000000000" />
+    <select-input [control]="form()!.controls.degreeId" legend="Carrera"
+      [options]="degrees()" />
+  </div>
+  <ng-content select="[buttons]" />
+}
+

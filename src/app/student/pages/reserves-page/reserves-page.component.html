@@ -1,0 +1,17 @@
+<div class="flex flex-col mt-10">
+  <h2 class="font-bold text-3xl text-center">Reservaciones</h2>
+  <div class="flex flex-row justify-between my-10">
+    <items-per-page [size]="size()" (setSize)="changeSize($event)" />
+    <app-pagination [page]="page()" (next)="changePage(1)" (previous)="changePage(-1)"
+      [hasNext]="reservationStore.hasNext()" [hasPrevious]="reservationStore.hasPrevious()"
+    />
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-4">
+    @for (reserve of reserves(); track $index) {
+      <div class="m-2">
+        <app-reservation-card [reserve]="reserve" />
+      </div>
+    }
+  </div>
+
+</div>
