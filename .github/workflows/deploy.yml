@@ -10,28 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     environment: Library
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 22.3.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.3.0
 
-    - name: Install dependencies
-      working-directory: .
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Set Envs
-      working-directory: .
-      run: API_URL=${{ secrets.API_URL }} AWS_URL=${{ secrets.AWS_URL }} npm run set-envs
+      - name: Set Envs
+        run: API_URL=${{ secrets.API_URL }} AWS_URL=${{ secrets.AWS_URL }} npm run set-envs
 
-    - name: Build Angular app
-      working-directory: .
-      run: npm run build -- --configuration development --output-path=../dist --base-href "/library-fe/"
+      - name: Build Angular app
+        run: npm run build -- --configuration development --base-href "/library-fe/"
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.TOKEN }}
-        publish_dir: dist/library/browser
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: dist/library
