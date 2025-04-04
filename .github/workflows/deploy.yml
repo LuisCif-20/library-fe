@@ -22,17 +22,17 @@ jobs:
       working-directory: .
       run: npm install
 
-    - name: Debug Environment Variables
-      run: |
-        echo "${{ secrets.API_URL }}"
-        echo "${{ secrets.AWS_URL }}"
-      env:
-        API_URL: ${{ secrets.API_URL }}
-        AWS_URL: ${{ secrets.AWS_URL }}
+    # - name: Debug Environment Variables
+    #   run: |
+    #     echo "${{ secrets.API_URL }}"
+    #     echo "${{ secrets.AWS_URL }}"
+    #   env:
+    #     API_URL: ${{ secrets.API_URL }}
+    #     AWS_URL: ${{ secrets.AWS_URL }}
 
     - name: Set Envs
       working-directory: .
-      run: npm run set-envs
+      run: API_URL=${{ secrets.API_URL }} AWS_URL=${{ secrets.AWS_URL }} npm run set-envs
 
     - name: Build Angular app
       working-directory: .
